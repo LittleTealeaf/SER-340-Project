@@ -1,0 +1,371 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\setlist{nosep}
+
+
+\begin{document}
+
+\begin{titlepage}
+  \vspace*{1cm}
+
+  \Huge
+  \textbf{Vision Document}
+
+  \vspace{0.5cm}
+
+  \textbf{for}
+
+  \vspace{0.5cm}
+
+  \textbf{Code Grader}
+
+  \vspace{2cm}
+
+  \LARGE
+  \textbf{Version 1.0}
+
+  \vspace{3cm}
+
+  Prepared by
+
+  Thomas Kwashnak, Isaac Crawford, and Sadjell Mamon
+
+  \vspace{0.75cm}
+  Quinnipiac University
+
+  \vspace{7cm}
+
+  \today
+\end{titlepage}
+
+\section*{Revision History}
+
+\begin{tabular}{| p{0.2\linewidth} | p{0.075\linewidth} | p{0.2\linewidth} | p{0.4\linewidth} |}
+  \hline
+  Date & Version & Description & Author\\
+  \hline
+  \hline
+  October 5th, 2022 & 1.0 & Initial Submission & Thomas Kwashnak, Sadjell Mamon, Isaac Crawford \\
+  \hline
+
+\end{tabular}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+
+
+\section{Introduction}
+
+\subsection{Purpose}
+
+The purpose of this document is to provide a list of features gathered from all stakeholders involved in this discussion. This document provides an overview of the project. This document also discusses a proposed solution to how the Code Grader system fulfils all listed requirements.
+
+\subsection{Goal}
+
+The main goal of the Code Grader system is to simplify the grading of coding-based assignments. This both removes the need to manually grade individual student's submissions, while providing the student with near-immediate feedback for the student to learn from.
+
+\subsection{Scope}
+
+This document is being written for the further development of the Code Grader
+
+\subsection{Definitions, Acronyms, and Abbreviations}
+\begin{description}
+  \item[Instructor] The professor or teacher running a course. The instructor is the user that assigns coding assignments and manages the course
+  \item[Administrator] Users that can manage other accounts and courses open
+  \item[Student] A user that is currently enrolled in a course led by an instructor. Students are the users who submit their answers to the homework assignments.
+  \item[Linux] An open-source unix-like operating system based on the linux kernel. Often used for servers due to its reliability and extensive command line tools.
+\end{description}
+
+
+
+\subsection{References}
+None
+
+\section{Positioning}
+
+\subsection{Problem Statement}
+
+\begin{center}
+  \begin{tabular}{| p{0.4\linewidth} | p{0.5\linewidth} | }
+    \hline
+    \textbf{The problem of} & having to manually grade programming assignments\\
+    \hline
+    \textbf{Affects} & professors and students\\
+    \hline
+    \textbf{The impact of which is} & more time consumed for the professor and a longer wait for the student to receive feedback on their assignment.\\
+    \hline
+    \textbf{A successful solution would be} & automatically giving feedback to the student and allowing them multiple chances to fix their work, as well as grading the submitted code for the professor \\
+    \hline
+  \end{tabular}
+\end{center}
+
+
+
+\section{Stakeholder and User Descriptions}
+
+\subsection{Stakeholder and User Summary}
+
+\subsubsection{Developer}
+
+\begin{tabular}{| p{0.3\linewidth} | p{0.6\linewidth} |}
+  \hline
+  \textbf{Description}& Thomas Kwashnak, Sadjell Mamon, and Isaac Crawford\\
+  \hline
+  \textbf{Type} & Developer\\
+  \hline
+  \textbf{Responsibilities} & \begin{itemize}
+    \item Create an application which serves as a replacement for Mimir
+    \item Ensure all the requirements are properly implemented
+  \end{itemize} \\
+  \hline
+  \textbf{Success Criteria}& \begin{itemize}
+    \item The system possesses all important requirements
+    \item The system has a low probability of crashing
+    \item The system automatically grades programming assignments after submissions
+  \end{itemize}\\
+  \hline
+  \textbf{Involvement} & \begin{itemize}
+    \item Application Designing
+    \item Development
+    \item Software Testing
+  \end{itemize} \\
+  \hline
+  \textbf{Deliverables Required}& \begin{itemize}
+    \item System that fulfils all the specified requirements based off of user needs
+  \end{itemize} \\
+  \hline
+  \textbf{Comments / Issues} & None \\
+  \hline
+\end{tabular}
+
+\subsubsection{Instructor}
+
+\begin{tabular}{| p{0.3\linewidth} | p{0.6\linewidth} |}
+  \hline
+  \textbf{Description}& Quinnipiac's Software Engineering Instructors using the system for a course\\
+  \hline
+  \textbf{Type} & User\\
+  \hline
+  \textbf{Responsibilities} & \begin{itemize}
+    \item Create courses
+    \item Create student accounts for courses
+    \item Post assignments
+  \end{itemize} \\
+  \hline
+  \textbf{Success Criteria}& \begin{itemize}
+    \item Instructor can create a course
+    \item Instructor can create student accounts for their courses
+    \item Instructor can post assignments
+    \item Instructor can export grades
+  \end{itemize}\\
+  \hline
+  \textbf{Involvement} & \begin{itemize}
+    \item Uses the final product to instruct courses and assign coding assignments to students
+  \end{itemize} \\
+  \hline
+  \textbf{Deliverables Required}& None \\
+  \hline
+  \textbf{Comments / Issues} & None \\
+  \hline
+\end{tabular}
+
+\subsubsection{Student}
+
+\begin{tabular}{| p{0.3\linewidth} | p{0.6\linewidth} |}
+  \hline
+  \textbf{Description}& Student currently taking a course from an instructor using the system\\
+  \hline
+  \textbf{Type} & User\\
+  \hline
+  \textbf{Responsibilities} & \begin{itemize}
+    \item Submit code solutions to course assignments to be graded
+  \end{itemize}\\
+  \hline
+  \textbf{Success Criteria}& \begin{itemize}
+    \item Students can access courses their professors assigned them to
+    \item Students can upload a solution to the assignments for their courses
+    \item Students see graded feedback on their submitted soluion after submitting and can submit again
+  \end{itemize}\\
+  \hline
+  \textbf{Involvement} & \begin{itemize}
+    \item Input files that will be used by the system
+  \end{itemize}\\
+  \hline
+  \textbf{Deliverables Required}& None \\
+  \hline
+  \textbf{Comments / Issues} & None \\
+  \hline
+\end{tabular}
+
+\subsubsection{Administrator}
+
+\begin{tabular}{| p{0.3\linewidth} | p{0.6\linewidth} |}
+  \hline
+  \textbf{Description}& Prof. Blake\\
+  \hline
+  \textbf{Type} & Admin / Client\\
+  \hline
+  \textbf{Responsibilities} & \begin{itemize}
+    \item Provide feedback during system development
+    \item Providing requirements
+    \item Testing the system
+    \item Create instructor accounts
+  \end{itemize}\\
+  \hline
+  \textbf{Success Criteria}& \begin{itemize}
+    \item Instructor accounts can be created
+  \end{itemize}\\
+  \hline
+  \textbf{Involvement} & \begin{itemize}
+    \item Ensure the product satisfies all the requirements
+    \item Usese the product to create instructor accounts
+  \end{itemize} \\
+  \hline
+  \textbf{Deliverables Required}& None \\
+  \hline
+  \textbf{Comments / Issues} & None \\
+  \hline
+\end{tabular}
+
+\subsubsection{Advisor}
+
+\begin{tabular}{| p{0.3\linewidth} | p{0.6\linewidth} |}
+  \hline
+  \textbf{Description}& Prof. Elkharboutly \\
+  \hline
+  \textbf{Type} & Project Advisor\\
+  \hline
+  \textbf{Responsibilities} & \begin{itemize}
+    \item Review and grade submitted documents
+  \end{itemize} \\
+  \hline
+  \textbf{Success Criteria}& \begin{itemize}
+    \item The application meets all the specified requirements correctly
+  \end{itemize}\\
+  \hline
+  \textbf{Involvement} & \begin{itemize}
+    \item Manages developers, provides feedback
+  \end{itemize} \\
+  \hline
+  \textbf{Deliverables Required}& None \\
+  \hline
+  \textbf{Comments / Issues} & None \\
+  \hline
+\end{tabular}
+
+\subsection{Stakeholder and User Environment}
+
+The system is to be used both in and out of the classroom environment, to provide professors and students with flexibility in uploading and submitting assignments respectively.
+
+\section{Product Overview}
+
+\subsection{Summary of System Capabilities}
+
+\begin{center}
+  \begin{tabular}{| p{0.45\linewidth} | p{0.45\linewidth} |}
+    \hline
+    \textbf{User Benefit} & \textbf{Supporting Feature}\\
+    \hline
+    \hline
+    Near-Immediate Feedback & \begin{itemize}
+      \item Automatic testing of submissions against test cases
+      \item Instructor can set test cases
+    \end{itemize}\\
+    \hline
+    Exportable Grades to a File& \begin{itemize}
+      \item Instructor can download grades in preferred file format
+    \end{itemize}\\
+    \hline
+    Ability to manage courses and students & \begin{itemize}
+      \item Instructor can create student accounts
+      \item Instructor can create courses and assign specific students to those courses
+    \end{itemize}\\
+    \hline
+
+  \end{tabular}
+\end{center}
+
+\subsection{Assumptions}
+
+It is assumed that the system used to host the server will run on a linux based operating system to provide sufficient access to command-line tools.
+
+\subsection{Dependencies}
+None
+
+\section{Product Features}
+
+\subsection{Instructor Account Creation}
+The admin will be able to create instructor accounts.
+
+\subsection{Student Account Creation}
+The instructor will be able to create student accounts for a course.
+
+\subsection{Course Creation}
+The instructor will be able to create a course.
+
+\subsection{Assignment Creation}
+The instructor will be able to to create an assignment for a course, specifying a due date, as well as upload test cases and starter code for that assignment. Instructor should be able to specify the language of the assignment.
+
+\subsection{Download Student Information}
+The instructor will be able to access a list of students taking the course. The instructor should also be able to download a file of assignemnt submissions by name.
+
+\subsection{Assignment Submission}
+The student should be able to submit assignments by uploading their solution code.
+
+\subsection{Assignment Grading}
+Assignment submissions will need to be automatically graded against test cases by the system when they are uploaded.
+
+\subsection{Web Application}
+The application needs to be accessed through a modern browser with an internet connection.
+
+\subsection{Score History}
+A history of attempts, including the grades, needs to be accessible by both the student and the instructor.
+
+\subsection{Submission Feedback}
+The instructor will be able to provide feedback on individual submissions
+
+\subsection{Instructor Course View}
+Instructor can view a list of courses that they are instructing
+
+\subsection{Instructor Assignment View}
+Instructor needs to be able to view a list of assignments for a particular course.
+
+\subsection{Student Assignment View}
+The student needs to be able to view a list of assignments in a course
+
+
+
+
+\section{Constraints}
+
+
+% \subsection{Hardware}
+
+% The system that runs the web server should run on an operating system that can run
+
+\subsection{Portability}
+The application interface needs to be usable on various screen sizes, including mobile screens.
+
+\subsection{Security}
+
+The system must comply with FERPA law. Therefore, access to view students grades should be restricted to only those with permissions under FERPA. For the sake of the project, this means that a student's grades should only be accessible by the course instructor.
+
+\subsection{Responsiveness}
+
+The system must be able to run and grade code submissions within 1 minute of uploading in order to provide quick feedback to the student.
+
+\subsection{Capacity}
+
+The system should be able to handle at least 20 students accessing the system at once.
+
+\subsection{Compatibility}
+
+The web application should be compatible with most modern web browsers.
+
+\end{document}

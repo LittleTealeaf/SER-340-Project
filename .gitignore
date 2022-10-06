@@ -1,0 +1,12 @@
+out/
+
+# Include tex gitignore
+**/*.aux
+**/*.fdb_latexmk
+**/*.fls
+**/*.log
+**/*.out
+**/*.synctex.gz
+**/*.toc
+
+*.pdf
