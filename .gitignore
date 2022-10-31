@@ -9,4 +9,8 @@ out/
 **/*.synctex.gz
 **/*.toc
 
+**/*.acn
+**/*.glo
+**/*.ist
+
 *.pdf
