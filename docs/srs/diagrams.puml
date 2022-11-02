@@ -1,18 +1,18 @@
 @startuml Use Case Diagram
-left to right direction
 skinparam packageStyle rectangle
 
-actor User
+actor Administrator
+actor Instructor
+actor Student
 
 rectangle System {
-  agent Test
 
-  User --> Test
-  Test --> User
+  agent Login
 
-  agent HIHI
+  Administrator --> Login
+  Instructor --> Login
+  Student --> Login
 
-  
 }
 
 @enduml
