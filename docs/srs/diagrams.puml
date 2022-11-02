@@ -1,18 +1,49 @@
 @startuml Use Case Diagram
 skinparam packageStyle rectangle
+left to right direction
 
-actor Administrator
-actor Instructor
-actor Student
+:Administrator:
+:Instructor:
+:Student:
+
 
 rectangle System {
 
-  agent Login
+  (Login)
+  (Create Instructor Account)
+  (Create Student Account)
+  (Create Course Section)
+  (Create Assignment)
+  (View Assigned Assignments)
+  (View Course Assignments)
+  (Submit Assignments)
+  (View Submission Results)
+  (View Submission History)
+  (Provide Submission Feedback)
+  (View Submission Feedback)
+  (View Course Grades)
+  (Download Student Information)
 
   Administrator --> Login
-  Instructor --> Login
-  Student --> Login
-
+  Instructor --> (Login)
+  Student --> (Login)
+  Administrator --> (Create Instructor Account)
+  Instructor --> (Create Student Account)
+  Instructor --> (Create Course Section)
+  Instructor --> (Create Assignment)
+  Instructor --> (View Submission Results)
+  Student --> (View Submission Results)
+  Instructor --> (View Submission History)
+  Student --> (View Submission History)
+  Instructor --> (View Submission Feedback)
+  Student --> (View Submission Feedback)
+  Instructor --> (Provide Submission Feedback)
+  Instructor --> (View Course Grades)
+  Instructor --> (Download Student Information)
+  Student --> (Submit Assignments)
+  Student --> (View Assigned Assignments)
+  Instructor --> (View Course Assignments)
 }
+
 
 @enduml
