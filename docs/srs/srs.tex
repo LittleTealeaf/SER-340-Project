@@ -10,12 +10,49 @@
 
 
 
+
+
 \title{Software Requirements Specification}
 
 \author{Thomas Kwashnak, Isaac Crawford, and Sadjell Mamon}
 
 
 \begin{document}
+
+\setlist[itemize]{leftmargin=0.5in}
+
+\begin{titlepage}
+  \vspace*{1cm}
+
+  \Huge
+  \textbf{Software Requirement Specifications}
+
+  \vspace{0.5cm}
+
+  \textbf{for}
+
+  \vspace{0.5cm}
+
+  \textbf{Code Grader}
+
+  \vspace{2cm}
+
+  \LARGE
+  \textbf{Version 1.0}
+
+  \vspace{3cm}
+
+  Prepared by
+
+  Thomas Kwashnak, Isaac Crawford, and Sadjell Mamon
+
+  \vspace{0.75cm}
+  Quinnipiac University
+
+  \vspace{7cm}
+
+  \today
+\end{titlepage}
 
 \section*{Revision History}
 
@@ -89,27 +126,39 @@ An admin, instructor, or student needs to be able to sign in using a username an
 
 \paragraph{Functional Requirements and Use Cases}
 
-\subparagraph{REQ-1} An admin, instructor, or student needs to be able to log in using a username and password.
+\begin{itemize}
+  \item \textbf{REQ-1} An admin, instructor, or student needs to be able to log in using a username and password
+\end{itemize}
 
+\vspace{0.1in}
 
-
-\begin{tabular}{| p{0.3\linewidth} | p{0.6\linewidth} |}
+\begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
   \hline
-  \textbf{Use Case Name} & USE CASE NAME \\
+  \textbf{Use Case Name} & Login \\
   \hline
-  \textbf{Brief Description} & Description \\
+  \textbf{Brief Description} & The user logs into their account using their username and password \\
   \hline
-  \textbf{Actor(s)} & ACTORS \\
+  \textbf{Actor(s)} & User \\
   \hline
-  \textbf{Basic Flow} & BAISC FLOW STUFF \\
+  \textbf{Basic Flow} & \begin{itemize}
+    \item[\textbf{A}] The user opens up the web application
+    \item[\textbf{B}] The system prompts the user to sign in using a username and password
+    \item[\textbf{C}] The user provides their account's username and password, and submits
+    \item[\textbf{D}] The system verifies that the username and password are correct, and displays the user's home page
+  \end{itemize}\\
   \hline
-  \textbf{Alternate Flows} & ALTERNATE FLOW STUFF \\
+  \textbf{Alternate Flows} & \begin{itemize}
+    \item[\textbf{D1}] The username does not exist or the password does not match the user's password
+    \item[\textbf{D1A}] The system displays an error stating that the username or password is incorrect
+  \end{itemize} \\
   \hline
-  \textbf{Pre-conditions} & ANY PRE CONDITIONS \\
+  \textbf{Pre-conditions} & \begin{itemize}
+    \item The user has an account with a username and password
+  \end{itemize} \\
   \hline
-  \textbf{Post-conditions} & POST CONDITIONS\\
+  \textbf{Post-conditions} & \\
   \hline
-  \textbf{Special Requirements} & REQUIREMENTS \\
+  \textbf{Special Requirements} &  \\
   \hline
 \end{tabular}
 
