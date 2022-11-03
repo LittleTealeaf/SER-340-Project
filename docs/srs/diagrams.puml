@@ -7,7 +7,7 @@ left to right direction
 :Student:
 
 
-rectangle System {
+rectangle CodeGrader {
 
   (Login)
   (Create Instructor Account)
@@ -23,26 +23,30 @@ rectangle System {
   (View Submission Feedback)
   (View Course Grades)
   (Download Student Information)
+  (Upload Test Case)
+
+  (Create Assignment) ..> (Upload Test Case) : uses
 }
-Administrator --> (Login)
-Administrator --> (Create Instructor Account)
-Instructor --> (Login)
-Instructor --> (Create Student Account)
-Instructor --> (Create Course)
-Instructor --> (Create Assignment)
-Instructor --> (View Submission Results)
-Instructor --> (View Submission History)
-Instructor --> (View Course Assignments)
-Instructor --> (View Submission Feedback)
-Instructor --> (Provide Submission Feedback)
-Instructor --> (View Course Grades)
-Instructor --> (Download Student Information)
-Student --> (Login)
-Student --> (View Submission History)
-Student --> (View Submission Results)
-Student --> (Submit Assignments)
-Student --> (View Submission Feedback)
-Student --> (View Assigned Assignments)
+Administrator ---> (Login)
+Administrator ---> (Create Instructor Account)
+(Login) <--- Instructor
+(Create Student Account) <--- Instructor
+(Create Course) <--- Instructor
+(Create Assignment) <--- Instructor
+(View Submission Results) <--- Instructor
+(View Submission History) <--- Instructor
+(View Course Assignments) <--- Instructor
+(View Submission Feedback) <--- Instructor
+(Provide Submission Feedback) <--- Instructor
+(View Course Grades) <--- Instructor
+(Download Student Information) <--- Instructor
+(Upload Test Case) <--- Instructor
+Student ---> (Login)
+Student ---> (View Submission History)
+Student ---> (View Submission Results)
+Student ---> (Submit Assignments)
+Student ---> (View Submission Feedback)
+Student ---> (View Assigned Assignments)
 
 
 
