@@ -1,10 +1,12 @@
 \documentclass{article}
 \usepackage{graphicx}
-\usepackage[margin=1in]{geometry}
+\usepackage[margin=0.75in]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 
 % \setcounter{secnumdepth}{4}
+
+\graphicspath{{../../out/docs/srs/diagrams/}}
 
 \setlist{nosep}
 
@@ -19,7 +21,7 @@
 
 \begin{document}
 
-\setlist[itemize]{leftmargin=0.5in}
+% \setlist[itemize]{leftmargin=0.5in}
 
 \begin{titlepage}
   \vspace*{1cm}
@@ -75,36 +77,72 @@
 \section{Introduction}
 
 \subsection{Purpose}
+<Briefly identify the product whose software requirements are specified in this document, including the revision or release number. Describe the scope of the product that is covered by this SRS, particularly if this SRS describes only part of the system or a single subsystem.>
 
 \subsection{Intended Audience and Reading Suggestion}
 
+< Briefly describe the different types of reader that the document is intended for, such as developers, project managers, marketing staff, users, testers, and documentation writers. Describe what the rest of this SRS contains and how it is organized. Suggest a sequence for reading the document, beginning with the overview sections and proceeding through the sections that are most pertinent to each reader type.>
+
 \subsection{References}
-
-
-\newpage
-
+<List any other documents or Web addresses to which this SRS refers. These may include user interface style guides, contracts, standards, system requirements specifications, use case documents, or a vision and scope document. Provide enough information so that the reader could access a copy of each reference, including title, author, version number, date, and source or location.>
 \section{Overall Description}
 
 \subsection{Product Perspective}
+<Describe the context and origin of the product being specified in this SRS. For example, state whether this product is a follow-on member of a product family, a replacement for certain existing systems, or a new, self-contained product. If the SRS defines a component of a larger system, relate the requirements of the larger system to the functionality of this software and identify interfaces between the two. A simple diagram that shows the major components of the overall system, subsystem interconnections, and external interfaces can be helpful.>
 
 \subsection{Product Functions}
+<Summarize the major functions the product must perform or must let the user perform. Details will be provided in Section 3, so only a high-level summary (such as a bullet list) is needed here. Organize the functions to make them understandable to any reader of the SRS. Add a high-level architecture diagram here. Describe the diagram and add caption.>
 
 \subsection{User Classes and Characteristics}
 
+\begin{tabular}{| p{0.3\linewidth} | p{0.65\linewidth} |}
+  \hline
+  \textbf{Class} & \textbf{Description} \\
+  \hline
+  \hline
+  Physicians & \begin{itemize}
+    \item Highly experienced and educated in creating and performing medical processes
+    \item High-level security priviledges for working with patient data
+    \item Little to no experience with the Smart Checklist system
+  \end{itemize} \\
+  \hline
+\end{tabular}
+
+
 \subsection{Operating Environment}
+<Describe the environment in which the software will operate, including the hardware platform, operating system and versions, and any other software components or applications with which it must peacefully coexist.>
 
 \subsection{Design and Implementation Constraints}
+<Describe any items or issues that will limit the options available to the developers. These might include: corporate or regulatory policies; hardware limitations (timing requirements, memory requirements); interfaces to other applications; specific technologies, tools, and databases to be used; parallel operations; language requirements; communications protocols; security considerations; design conventions or programming standards (for example, if the customers organization will be responsible for maintaining the delivered software).>
 
 \subsection{Assumptions and Dependencies}
+<List any assumed factors (as opposed to known facts) that could affect the requirements stated in the SRS. These could include third-party or commercial components that you plan to use, issues around the development or operating environment, or constraints. The project could be affected if these assumptions are incorrect, are not shared, or change. Also identify any dependencies the project has on external factors, such as software components that you intend to reuse from another project, unless they are already documented elsewhere (for example, in the vision and scope document or the project plan).>
 
-\newpage
 
 \section{Specific Requirements}
 
 \subsection{Requirements}
 
-\paragraph{REQ-1} An admin, instructor, or student needs to be able to sign in using a username and password.
+\begin{itemize}
+  \item \textbf{REQ-1} An admin, instructor, or student can sign in using a username and password.
+  \item \textbf{REQ-2} An admin can create an instructor account and set the username and password.
+  \item \textbf{REQ-3} An instructor can create a student account for one of their courses.
+  \item \textbf{REQ-4} An instructor can create a course.
+  \item \textbf{REQ-5} An instructor can create an assignment within a course.
+  \item \textbf{REQ-6} A student can view a list of their assignments.
+  \item \textbf{REQ-7} An instructor can view a list of assignments for a course.
+  \item \textbf{REQ-8} A student can submit an assignment.
+  \item \textbf{REQ-9} A student can view their submission results.
+  \item \textbf{REQ-10} An instructor can view a list of submission results of students for an assignment.
+  \item \textbf{REQ-11} A student can view a history of submission attempts for an assignment.
+  \item \textbf{REQ-12} An instructor can view the history of submission attempts for a particular student and assignment.
+  \item \textbf{REQ-13} An instructor can provide comments as feedback on a student's submission for an assignment.
+  \item \textbf{REQ-14} A student can view feedback comments that the instructor has provided for an assignment submission.
+  \item \textbf{REQ-15} An instructor can view a list of students and their grades for each assignment.
+  \item \textbf{REQ-16} An instructor can download student information, including names and grades, for a course.
+\end{itemize}
 
+\newpage
 \subsection{System Features}
 
 % \subsubsection{System Feature 1}
@@ -125,12 +163,12 @@
 % WIREFRAME: login
 
 
-\paragraph{Description} An admin, instructor, or a student is able to log in using the login screen.
+\paragraph{Description} An admin, instructor, or student signs into the application using their username and password.
 
 \paragraph{Functional Requirements and Use Cases}
 
 \begin{itemize}
-  \item \textbf{REQ-1} An admin, instructor, or student needs to be able to log in using a username and password
+  \item \textbf{REQ-1} An admin, instructor, or student can log in using a username and password
 \end{itemize}
 
 \vspace{0.1in}
@@ -144,41 +182,196 @@
   \textbf{Actor(s)} & User \\
   \hline
   \textbf{Basic Flow} & \begin{itemize}
-    \item[\textbf{A}] The user opens up the web application
-    \item[\textbf{B}] The system prompts the user to sign in using a username and password
-    \item[\textbf{C}] The user provides their account's username and password, and submits
-    \item[\textbf{D}] The system verifies that the username and password are correct, and displays the user's home page
+    \item[\textbf{1}] The user opens up the web application
+    \item[\textbf{2}] The system prompts the user to sign in using a username and password
+    \item[\textbf{3}] The user provides their account's username and password, and submits
+    \item[\textbf{4}] The system verifies that the username and password are correct, and displays the user's home page
   \end{itemize}\\
   \hline
   \textbf{Alternate Flows} & \begin{itemize}
-    \item[\textbf{D1}] The username does not exist or the password does not match the user's password
-    \item[\textbf{D1A}] The system displays an error stating that the username or password is incorrect
+    \item[\textbf{4A}] The username does not exist or the password does not match the user's password
+    \item[\textbf{4A1}] The system displays an error stating that the username or password is incorrect
   \end{itemize} \\
   \hline
-  \textbf{Pre-conditions} & \begin{itemize}
-    \item The user has an account with a username and password
-  \end{itemize} \\
+  \textbf{Pre-conditions} & None\\
   \hline
-  \textbf{Post-conditions} & \\
+  \textbf{Post-conditions} & None \\
   \hline
-  \textbf{Special Requirements} &  \\
+  \textbf{Special Requirements} & None \\
   \hline
 \end{tabular}
 
-
-
-
-
 \subsubsection{Create Instructor Account}
+
+\paragraph{Description} An admin creates an instructor account, specifying the username and password
+
+\paragraph{Functional Requirements and Use Cases}
+
+\begin{itemize}
+  \item \textbf{REQ-2} An admin can create an instructor account and set the username and password
+\end{itemize}
+
+\vspace{0.1in}
+
+\begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+  \hline
+  \textbf{Use Case Name} & Create Instructor Account \\
+  \hline
+  \textbf{Brief Description} & The admin creates an instructor account with a username and password \\
+  \hline
+  \textbf{Actor(s)} & Admin \\
+  \hline
+  \textbf{Basic Flow} & \begin{itemize}
+    \item[\textbf{1}] The admin chooses to create an instructor account.
+    \item[\textbf{2}] The system prompts the Admin to provide the new instructor's name, username, and password
+    \item[\textbf{3}] The admin provides the instructor's name, username and password and presses submit
+    \item[\textbf{4}] The system creates the account, sets the username and password, and notifies the admin that the account was successfully created
+  \end{itemize}\\
+  \hline
+  \textbf{Alternate Flows} & \begin{itemize}
+    \item[\textbf{3A}] The admin provides a username that is already in use by another user
+    \item[\textbf{3A1}] The system displays an error that the username is already in use, and asks the admin to provide another username.
+  \end{itemize} \\
+  \hline
+  \textbf{Pre-conditions} & \begin{itemize}
+    \item The admin is signed into their account
+  \end{itemize} \\
+  \hline
+  \textbf{Post-conditions} & None \\
+  \hline
+  \textbf{Special Requirements} & None \\
+  \hline
+\end{tabular}
+
 
 \subsubsection{Create Student Account}
 
 \paragraph{Description} The instructor creates a student account for a specific course.
 
+\paragraph{Functional Requirements and Use Cases}
+\begin{itemize}
+  \item \textbf{REQ-3} An instructor can create a student account for one of their courses.
+\end{itemize}
 
-\subsubsection{Create Course Section}
+\vspace{0.1in}
+
+\begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+  \hline
+  \textbf{Use Case Name} & Create Student Account \\
+  \hline
+  \textbf{Brief Description} & The instructor creates a student account for one of their courses \\
+  \hline
+  \textbf{Actor(s)} & Instructor \\
+  \hline
+  \textbf{Basic Flow} & \begin{itemize}
+    \item[\textbf{1}] The instructor chooses one of the courses that they instruct
+    \item[\textbf{2}] The system displays the home page for that course
+    \item[\textbf{3}] The instructor chooses to create a new student
+    \item[\textbf{4}] The system prompts the user to provide the student's name, username, and password
+    \item[\textbf{5}] The instructor provides the student's details and submits
+    \item[\textbf{6}] The system creates the student account, and notifies the instructor that the account was created
+  \end{itemize}\\
+  \hline
+  \textbf{Alternate Flows} & \begin{itemize}
+    \item[\textbf{5A}] The instructor provides a username that is already in use by another user
+    \item[\textbf{5A1}] The system displays an error that the username is already in use, and asks the instructor to provide another username.
+  \end{itemize} \\
+  \hline
+  \textbf{Pre-conditions} & \begin{itemize}
+    \item The instructor is signed into their account
+    \item The instructor has at least one course created
+  \end{itemize} \\
+  \hline
+  \textbf{Post-conditions} & None \\
+  \hline
+  \textbf{Special Requirements} & None \\
+  \hline
+\end{tabular}
+
+
+\subsubsection{Create Course}
+
+
+\paragraph{Description} The instructor creates a course
+
+\paragraph{Functional Requirements and Use Cases}
+\begin{itemize}
+  \item \textbf{REQ-4} An instructor can create a cours
+\end{itemize}
+
+\vspace{0.1in}
+
+\begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+  \hline
+  \textbf{Use Case Name} & Create Course \\
+  \hline
+  \textbf{Brief Description} & An instructor creates a course \\
+  \hline
+  \textbf{Actor(s)} & Instructor \\
+  \hline
+  \textbf{Basic Flow} & \begin{itemize}
+    \item[\textbf{1}] The instructor chooses to create a course
+    \item[\textbf{2}] The system prompts the instructor to give the course a name and description
+    \item[\textbf{3}] The instructor provides the course information and submits
+    \item[\textbf{4}] The system creates the course, and displays the course homepage to the instructor
+  \end{itemize}\\
+  \hline
+  \textbf{Alternate Flows} & None \\
+  \hline
+  \textbf{Pre-conditions} & \begin{itemize}
+    \item The instructor is signed into their account
+  \end{itemize} \\
+  \hline
+  \textbf{Post-conditions} & None \\
+  \hline
+  \textbf{Special Requirements} & None \\
+  \hline
+\end{tabular}
+
 
 \subsubsection{Create Assignment}
+
+\paragraph{Description} The instructor creates an assignment for one of their courses
+
+\paragraph{Functional Requirements and Use Cases}
+\begin{itemize}
+  \item \textbf{REQ-5} An instructor can create an assignment within a course.
+\end{itemize}
+
+\vspace{0.1in}
+
+\begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+  \hline
+  \textbf{Use Case Name} & Create Course Assignment \\
+  \hline
+  \textbf{Brief Description} & An instructor creates an assignment for a course  \\
+  \hline
+  \textbf{Actor(s)} & Instructor \\
+  \hline
+  \textbf{Basic Flow} & \begin{itemize}
+    \item[\textbf{1}] The instructor chooses to create a new assignment
+    \item[\textbf{2}] The system prompts the instructor to provide the assignment name, description, due date, language requirement, and test cases.
+    \item[\textbf{3}] The instructor inputs the assignment details and submits
+    \item[\textbf{4}] The system posts the assignment and returns the user to the course home page
+  \end{itemize}\\
+  \hline
+  \textbf{Alternate Flows} & None \\
+  \hline
+  \textbf{Pre-conditions} & \begin{itemize}
+    \item The instructor is signed into their account
+    \item The instructor has at least one course
+    \item The instructor is at the course home page
+  \end{itemize} \\
+  \hline
+  \textbf{Post-conditions} & None \\
+  \hline
+  \textbf{Special Requirements} & None \\
+  \hline
+\end{tabular}
+
+
+\subsubsection{Upload Assignment Test Case}
+
 
 
 \subsubsection{View Assigned Assignments}
@@ -206,6 +399,7 @@
 
 \subsubsection{Download Student Information}
 
+\newpage
 \subsection{Other Nonfunctional Requirements}
 
 % \subsubsection{FERPA Restrictions}
@@ -232,10 +426,14 @@
 \section{Glossary}
 
 
+
+
+\newpage
 \section{Analysis Models}
-
 \subsection{Use Case Diagram}
+\includegraphics[height=8in]{Use Case Diagram.png}
 
+\newpage
 \section{To Be Determined List}
 
 
