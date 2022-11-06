@@ -119,58 +119,87 @@
 <List any assumed factors (as opposed to known facts) that could affect the requirements stated in the SRS. These could include third-party or commercial components that you plan to use, issues around the development or operating environment, or constraints. The project could be affected if these assumptions are incorrect, are not shared, or change. Also identify any dependencies the project has on external factors, such as software components that you intend to reuse from another project, unless they are already documented elsewhere (for example, in the vision and scope document or the project plan).>
 
 
+\newpage
 \section{Specific Requirements}
+
+\subsection{Interfaces}
 
 \subsection{Requirements}
 
+% \begin{itemize}
+%   \item \textbf{REQ-1} An admin, instructor, or student can sign in using a username and password.
+%   \item \textbf{REQ-2} An admin can create an instructor account and set the username and password.
+%   \item \textbf{REQ-3} An instructor can create a student account for one of their courses.
+%   \item \textbf{REQ-4} An instructor can create a course.
+%   \item \textbf{REQ-5} An instructor can create an assignment within a course.
+%   \item \textbf{REQ-6} A student can view a list of their assignments.
+%   \item \textbf{REQ-7} An instructor can view a list of assignments for a course.
+%   \item \textbf{REQ-8} A student can submit an assignment.
+%   \item \textbf{REQ-9} A student can view their submission results.
+%   \item \textbf{REQ-10} An instructor can view a list of submission results of students for an assignment.
+%   \item \textbf{REQ-11} A student can view a history of submission attempts for an assignment.
+%   \item \textbf{REQ-12} An instructor can view the history of submission attempts for a particular student and assignment.
+%   \item \textbf{REQ-13} An instructor can provide comments as feedback on a student's submission for an assignment.
+%   \item \textbf{REQ-14} A student can view feedback comments that the instructor has provided for an assignment submission.
+%   \item \textbf{REQ-15} An instructor can view a list of students and their grades for each assignment.
+%   \item \textbf{REQ-16} An instructor can download student information, including names and grades, for a course.
+%   \item \textbf{REQ-17} An instructor can upload a test case with an input text file and an expected output text file.
+% \end{itemize}
+
 \begin{itemize}
-  \item \textbf{REQ-1} An admin, instructor, or student can sign in using a username and password.
-  \item \textbf{REQ-2} An admin can create an instructor account and set the username and password.
-  \item \textbf{REQ-3} An instructor can create a student account for one of their courses.
-  \item \textbf{REQ-4} An instructor can create a course.
-  \item \textbf{REQ-5} An instructor can create an assignment within a course.
-  \item \textbf{REQ-6} A student can view a list of their assignments.
-  \item \textbf{REQ-7} An instructor can view a list of assignments for a course.
-  \item \textbf{REQ-8} A student can submit an assignment.
-  \item \textbf{REQ-9} A student can view their submission results.
-  \item \textbf{REQ-10} An instructor can view a list of submission results of students for an assignment.
-  \item \textbf{REQ-11} A student can view a history of submission attempts for an assignment.
-  \item \textbf{REQ-12} An instructor can view the history of submission attempts for a particular student and assignment.
-  \item \textbf{REQ-13} An instructor can provide comments as feedback on a student's submission for an assignment.
-  \item \textbf{REQ-14} A student can view feedback comments that the instructor has provided for an assignment submission.
-  \item \textbf{REQ-15} An instructor can view a list of students and their grades for each assignment.
-  \item \textbf{REQ-16} An instructor can download student information, including names and grades, for a course.
-  \item \textbf{REQ-17} An instructor can upload a test case with an input text file and an expected output text file.
+  \item \textbf{REQ-1} The system should allow an admin to login using their username and password
+  \item \textbf{REQ-2} The system should allow an instructor to login using their username and password
+  \item \textbf{REQ-3} The system should allow a student to login using their username and password
+  \item \textbf{REQ-4} The system should allow an admin to create an instructor account with a username and password
+  \item \textbf{REQ-5} The system should allow an instructor to create a new course with a name and description
+  \item \textbf{REQ-6} The system should allow an instructor to create a student account within a course with a username and password
+  \item \textbf{REQ-7} The system should allow an instructor to view a list of students in a course
+  \item \textbf{REQ-8} The system should allow an instructor to view a list of assignments in a course
+  \item \textbf{REQ-9} The system should allow an instructor to create an assignment in a course
+  \item \textbf{REQ-10} The system should allow an instructor to edit an assignment in a course
+  \item \textbf{REQ-11} The system should allow an instructor to upload a test case to an assignment
+  \item \textbf{REQ-12} The system should allow a student to view a list of assignments in their course
+  \item \textbf{REQ-13} The system should allow a student to view an assignment in their course
+  \item \textbf{REQ-14} The system should allow a student to upload their work to an assignment
+  \item \textbf{REQ-15} The system should allow a student to submit an assignment
+  \item \textbf{REQ-16} The system should allow a student to view their submission grade
+  \item \textbf{REQ-17} The system should allow a student to view a history of submissions
+  % \item \textbf{REQ-2} An admin can create an instructor account with a username and password
+  % \item \textbf{REQ-3} An instructor can create a course with a name and description
+  % \item \textbf{REQ-4} An instructor can create a student account for a course with a username and password
+  % \item \textbf{REQ-5} An instructor can view a list of their courses
+  % \item \textbf{REQ-6} An instructor can view a list of assignments in a course
+  % \item \textbf{REQ-7} An instructor can create an assignment
+  % \item \textbf{REQ-8} An instructor can view student grades in a course
+  % \item \textbf{REQ-9} An instructor can view submissions for an assignment
+  % \item \textbf{REQ-10} An instructor can provide feedback to an assignment submission
+  % \item \textbf{REQ-11} An instructor can view feedback for an assignment submission
+  % \item \textbf{REQ-12} A student can view a list of assignments for their course
+  % \item \textbf{REQ-13} An instructor can upload a test case to an assignment
+  % \item \textbf{REQ-14} A student can upload their submission code to an assignment
+  % \item \textbf{REQ-15} A student can submit an assignment
+  % \item \textbf{REQ-16} A student can view the grade on a submission
+  % \item \textbf{REQ-17} A
 \end{itemize}
 
-\newpage
 \subsection{System Features}
-
-% \subsubsection{System Feature 1}
-
-% \paragraph{Description and Priority}
-
-% \paragraph{Functional Requirements and Use Cases}
-
-% \subsubsection{System Feature 2}
-
-% \paragraph{Description and Priority}
-
-% \paragraph{Functional Requirements and Use Cases}
 
 \subsubsection{Login}
 
-
-% WIREFRAME: login
-
-
-\paragraph{Description} An admin, instructor, or student signs into the application using their username and password.
+\paragraph{Description} An admin, instructor, or student signs into the application using their username and password
 
 \paragraph{Functional Requirements and Use Cases}
 
+% \subparagraph{REQ-1} An admin can sign in using a username and password
+% \subparagraph{REQ-2} An instructor can sign in using a username and password
+% \subparagraph{REQ-3} A student can sign in using a username and password
+
 \begin{itemize}
-  \item \textbf{REQ-1} An admin, instructor, or student can log in using a username and password
+  \item \textbf{REQ-1} The system should allow an admin to login using their username and password
+  \item \textbf{REQ-2} The system should allow an instructor to login using their username and password
+  \item \textbf{REQ-3} The system should allow a student to login using their username and password
 \end{itemize}
+
 
 \vspace{0.1in}
 
@@ -182,34 +211,33 @@
   \hline
   \textbf{Actor(s)} & User \\
   \hline
+  \textbf{Pre-conditions} & None\\
+  \hline
   \textbf{Basic Flow} & \begin{itemize}
-    \item[\textbf{1}] The user opens up the web application
-    \item[\textbf{2}] The system prompts the user to sign in using a username and password
-    \item[\textbf{3}] The user provides their account's username and password, and submits
-    \item[\textbf{4}] The system verifies that the username and password are correct, and displays the user's home page
+    \item[] \textbf{1} The user opens up the web application
+    \item[] \textbf{2} The system prompts the user to sign in using a username and password
+    \item[] \textbf{3} The user provides their account's username and password, and submits
+    \item[] \textbf{4} The system displays the user's home page
   \end{itemize}\\
   \hline
   \textbf{Alternate Flows} & \begin{itemize}
-    \item[\textbf{4A}] The username does not exist or the password does not match the user's password
-    \item[\textbf{4A1}] The system displays an error stating that the username or password is incorrect
+    \item[] \textbf{3A} The user inputs a username that does not exist
+    \item[] \textbf{3A1} The system displays an error stating that either the username or password is incorrect, and asks the user to try signing in again
+    \item[] \textbf{3B} The user inputs a password that does not match the user's actual password
+    \item[] \textbf{3B1} The system displays an error stating that either the username or password is incorrect, and asks the user to try signing in again
   \end{itemize} \\
-  \hline
-  \textbf{Pre-conditions} & None\\
-  \hline
-  \textbf{Post-conditions} & None \\
-  \hline
-  \textbf{Special Requirements} & None \\
   \hline
 \end{tabular}
 
 \subsubsection{Create Instructor Account}
 
-\paragraph{Description} An admin creates an instructor account, specifying the username and password
+\paragraph{Description} An admin creates an instructor account, setting it's username and password
+
 
 \paragraph{Functional Requirements and Use Cases}
 
 \begin{itemize}
-  \item \textbf{REQ-2} An admin can create an instructor account and set the username and password
+  \item \textbf{REQ-4} The system should allow an admin to create an instructor account with a username and password
 \end{itemize}
 
 \vspace{0.1in}
@@ -218,86 +246,34 @@
   \hline
   \textbf{Use Case Name} & Create Instructor Account \\
   \hline
-  \textbf{Brief Description} & The admin creates an instructor account with a username and password \\
+  \textbf{Brief Description} & The admin creates an instructor account, and specifies the username and password \\
   \hline
   \textbf{Actor(s)} & Admin \\
   \hline
+  \textbf{Pre-conditions} & The admin is logged in, and is on the admin homepage\\
+  \hline
   \textbf{Basic Flow} & \begin{itemize}
-    \item[\textbf{1}] The admin chooses to create an instructor account.
-    \item[\textbf{2}] The system prompts the Admin to provide the new instructor's name, username, and password
-    \item[\textbf{3}] The admin provides the instructor's name, username and password and presses submit
-    \item[\textbf{4}] The system creates the account, sets the username and password, and notifies the admin that the account was successfully created
+    \item[] \textbf{1} The admin chooses to create a new instructor account
+    \item[] \textbf{2} The system prompts the admin to specify the instructor name, username, and password
+    \item[] \textbf{3} The admin fills in the name, username and password, and submits
+    \item[] \textbf{4} The system creates the account and returns the admin to the admin homepage
   \end{itemize}\\
   \hline
   \textbf{Alternate Flows} & \begin{itemize}
-    \item[\textbf{3A}] The admin provides a username that is already in use by another user
-    \item[\textbf{3A1}] The system displays an error that the username is already in use, and asks the admin to provide another username.
+    \item[] \textbf{3A} The user inputs a username that alraedy exists
+    \item[] \textbf{3A1} The system displays an error asking the admin to choose another username
   \end{itemize} \\
-  \hline
-  \textbf{Pre-conditions} & \begin{itemize}
-    \item The admin is signed into their account
-  \end{itemize} \\
-  \hline
-  \textbf{Post-conditions} & None \\
-  \hline
-  \textbf{Special Requirements} & None \\
   \hline
 \end{tabular}
-
-
-\subsubsection{Create Student Account}
-
-\paragraph{Description} The instructor creates a student account for a specific course.
-
-\paragraph{Functional Requirements and Use Cases}
-\begin{itemize}
-  \item \textbf{REQ-3} An instructor can create a student account for one of their courses.
-\end{itemize}
-
-\vspace{0.1in}
-
-\begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
-  \hline
-  \textbf{Use Case Name} & Create Student Account \\
-  \hline
-  \textbf{Brief Description} & The instructor creates a student account for one of their courses \\
-  \hline
-  \textbf{Actor(s)} & Instructor \\
-  \hline
-  \textbf{Basic Flow} & \begin{itemize}
-    \item[\textbf{1}] The instructor chooses one of the courses that they instruct
-    \item[\textbf{2}] The system displays the home page for that course
-    \item[\textbf{3}] The instructor chooses to create a new student
-    \item[\textbf{4}] The system prompts the user to provide the student's name, username, and password
-    \item[\textbf{5}] The instructor provides the student's details and submits
-    \item[\textbf{6}] The system creates the student account, and notifies the instructor that the account was created
-  \end{itemize}\\
-  \hline
-  \textbf{Alternate Flows} & \begin{itemize}
-    \item[\textbf{5A}] The instructor provides a username that is already in use by another user
-    \item[\textbf{5A1}] The system displays an error that the username is already in use, and asks the instructor to provide another username.
-  \end{itemize} \\
-  \hline
-  \textbf{Pre-conditions} & \begin{itemize}
-    \item The instructor is signed into their account
-    \item The instructor has at least one course created
-  \end{itemize} \\
-  \hline
-  \textbf{Post-conditions} & None \\
-  \hline
-  \textbf{Special Requirements} & None \\
-  \hline
-\end{tabular}
-
 
 \subsubsection{Create Course}
 
+\paragraph{Description} The instructor creates a course with a name and description
 
-\paragraph{Description} The instructor creates a course
 
 \paragraph{Functional Requirements and Use Cases}
 \begin{itemize}
-  \item \textbf{REQ-4} An instructor can create a cours
+  \item \textbf{REQ-5} The system should allow an instructor to create a new course with a name and description
 \end{itemize}
 
 \vspace{0.1in}
@@ -306,181 +282,342 @@
   \hline
   \textbf{Use Case Name} & Create Course \\
   \hline
-  \textbf{Brief Description} & An instructor creates a course \\
+  \textbf{Brief Description} & The instructor creates a course \\
   \hline
   \textbf{Actor(s)} & Instructor \\
   \hline
+  \textbf{Pre-conditions} & The instructor is logged in, and is currently on the instructor homepage\\
+  \hline
   \textbf{Basic Flow} & \begin{itemize}
-    \item[\textbf{1}] The instructor chooses to create a course
-    \item[\textbf{2}] The system prompts the instructor to give the course a name and description
-    \item[\textbf{3}] The instructor provides the course information and submits
-    \item[\textbf{4}] The system creates the course, and displays the course homepage to the instructor
+    \item[] \textbf{1} The instructor chooses to create a new course
+    \item[] \textbf{2} The system prompts the instructor to fill in the new course name and description
+    \item[] \textbf{3} The instructor fills in the details and submits
+    \item[] \textbf{4} The system creates the course, and displays the course's page
   \end{itemize}\\
   \hline
-  \textbf{Alternate Flows} & None \\
-  \hline
-  \textbf{Pre-conditions} & \begin{itemize}
-    \item The instructor is signed into their account
+  \textbf{Alternate Flows} & \begin{itemize}
+    \item[] \textbf{3A} The instructor already has a course with the given coursename
+    \item[] \textbf{3A1} The system displays an error asking the instructor to choose another course name
   \end{itemize} \\
-  \hline
-  \textbf{Post-conditions} & None \\
-  \hline
-  \textbf{Special Requirements} & None \\
   \hline
 \end{tabular}
 
-
-\subsubsection{Create Assignment}
-
-\paragraph{Description} The instructor creates an assignment for one of their courses
-
-\paragraph{Functional Requirements and Use Cases}
-\begin{itemize}
-  \item \textbf{REQ-5} An instructor can create an assignment within a course.
-\end{itemize}
-
-\vspace{0.1in}
-
-\begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
-  \hline
-  \textbf{Use Case Name} & Create Course Assignment \\
-  \hline
-  \textbf{Brief Description} & An instructor creates an assignment for a course  \\
-  \hline
-  \textbf{Actor(s)} & Instructor \\
-  \hline
-  \textbf{Basic Flow} & \begin{itemize}
-    \item[\textbf{1}] The instructor chooses to create a new assignment
-    \item[\textbf{2}] The system prompts the instructor to provide the assignment name, description, due date, language requirement, and test cases.
-    \item[\textbf{3}] The instructor inputs the assignment details and submits
-    \item[\textbf{4}] The system posts the assignment and returns the user to the course home page
-  \end{itemize}\\
-  \hline
-  \textbf{Alternate Flows} & None \\
-  \hline
-  \textbf{Pre-conditions} & \begin{itemize}
-    \item The instructor is signed into their account
-    \item The instructor has at least one course
-    \item The instructor is at the course home page
-  \end{itemize} \\
-  \hline
-  \textbf{Post-conditions} & None \\
-  \hline
-  \textbf{Special Requirements} & None \\
-  \hline
-\end{tabular}
+% \subsubsection{Login}
 
 
-\subsubsection{Upload Assignment Test Case}
+% % WIREFRAME: login
 
-\paragraph{Description} The instructor uploads the input and expected output as text files for a test case.
 
-\paragraph{Functional Requirements and Use Cases}
+% \paragraph{Description} An admin, instructor, or student signs into the application using their username and password.
 
-\begin{itemize}
-  \item \textbf{REQ-17} An instructor can upload a test case with an input text file and an expected output text file.
-\end{itemize}
+% \paragraph{Functional Requirements and Use Cases}
 
-\vspace{0.1in}
+% \subparagraph{REQ-1} An admin, instructor, or student can log in using a username and password
 
-\begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
-  \hline
-  \textbf{Use Case Name} & Upload Test Case \\
-  \hline
-  \textbf{Brief Description} & An instructor uploads an input and output file for a test case  \\
-  \hline
-  \textbf{Actor(s)} & Instructor \\
-  \hline
-  \textbf{Basic Flow} & \begin{itemize}
-    \item[\textbf{1}] An instructor chooses to upload a test case
-    \item[\textbf{2}] The system prompts the user with the options to upload two separate files, labeled "input" and "output"
-    \item[\textbf{3}] The instructor uploads the input and output files for the test case
-    \item[\textbf{4}] The system stores those files as a test case, and returns the instructor to the original view
-  \end{itemize}\\
-  \hline
-  \textbf{Alternate Flows} & None \\
-  \hline
-  \textbf{Pre-conditions} & \begin{itemize}
-    \item The instructor is signed into their account
-    \item The instructor has at least one course
-    \item The instructor is at the course home page
-    \item The instructor is editing an assignment
-  \end{itemize} \\
-  \hline
-  \textbf{Post-conditions} & None \\
-  \hline
-  \textbf{Special Requirements} & None \\
-  \hline
-\end{tabular}
+% \vspace{0.1in}
 
-\newpage
+% \begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+%   \hline
+%   \textbf{Use Case Name} & Login \\
+%   \hline
+%   \textbf{Brief Description} & The user logs into their account using their username and password \\
+%   \hline
+%   \textbf{Actor(s)} & User \\
+%   \hline
+%   \textbf{Basic Flow} & \begin{itemize}
+%     \item[\textbf{1}] The user opens up the web application
+%     \item[\textbf{2}] The system prompts the user to sign in using a username and password
+%     \item[\textbf{3}] The user provides their account's username and password, and submits
+%     \item[\textbf{4}] The system verifies that the username and password are correct, and displays the user's home page
+%   \end{itemize}\\
+%   \hline
+%   \textbf{Alternate Flows} & \begin{itemize}
+%     \item[\textbf{4A}] The username does not exist or the password does not match the user's password
+%     \item[\textbf{4A1}] The system displays an error stating that the username or password is incorrect
+%   \end{itemize} \\
+%   \hline
+%   \textbf{Pre-conditions} & None\\
+%   \hline
+%   \textbf{Post-conditions} & None \\
+%   \hline
+%   \textbf{Special Requirements} & None \\
+%   \hline
+% \end{tabular}
 
-\subsubsection{View Assignments}
+% \subsubsection{Create Instructor Account}
 
-\paragraph{Description} The user can view a list of all assignments for the course
+% \paragraph{Description} An admin creates an instructor account, specifying the username and password
 
-\paragraph{Functional Requirements and Use Cases}
-
-% \begin{itemize}
-%   \item \textbf{REQ-6} A student can view a list of their assignments.
-%   \item \textbf{REQ-7} An instructor can view a list of assignments for a course.
-% \end{itemize}
-
-\subparagraph{REQ-6} A student can view a list of their assignments.
-
-\vspace{0.1in}
-
-\begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
-  \hline
-  \textbf{Use Case Name} & View Course Assignments \\
-  \hline
-  \textbf{Brief Description} & An instructor uploads an input and output file for a test case  \\
-  \hline
-  \textbf{Actor(s)} & Instructor \\
-  \hline
-  \textbf{Basic Flow} & \begin{itemize}
-    \item[\textbf{1}] An instructor chooses to upload a test case
-    \item[\textbf{2}] The system prompts the user with the options to upload two separate files, labeled "input" and "output"
-    \item[\textbf{3}] The instructor uploads the input and output files for the test case
-    \item[\textbf{4}] The system stores those files as a test case, and returns the instructor to the original view
-  \end{itemize}\\
-  \hline
-  \textbf{Alternate Flows} & None \\
-  \hline
-  \textbf{Pre-conditions} & \begin{itemize}
-    \item The instructor is signed into their account
-    \item The instructor has at least one course
-    \item The instructor is at the course home page
-    \item The instructor is editing an assignment
-  \end{itemize} \\
-  \hline
-  \textbf{Post-conditions} & None \\
-  \hline
-  \textbf{Special Requirements} & None \\
-  \hline
-\end{tabular}
+% \paragraph{Functional Requirements and Use Cases}
 
 
 
+% \subparagraph{REQ-2} An admin can create an instructor account and set the username and password
 
-\subsubsection{Submit Assignments}
+% \vspace{0.1in}
 
-% includes feedback step
+% \begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+%   \hline
+%   \textbf{Use Case Name} & Create Instructor Account \\
+%   \hline
+%   \textbf{Brief Description} & The admin creates an instructor account with a username and password \\
+%   \hline
+%   \textbf{Actor(s)} & Admin \\
+%   \hline
+%   \textbf{Basic Flow} & \begin{itemize}
+%     \item[\textbf{1}] The admin chooses to create an instructor account.
+%     \item[\textbf{2}] The system prompts the Admin to provide the new instructor's name, username, and password
+%     \item[\textbf{3}] The admin provides the instructor's name, username and password and presses submit
+%     \item[\textbf{4}] The system creates the account, sets the username and password, and notifies the admin that the account was successfully created
+%   \end{itemize}\\
+%   \hline
+%   \textbf{Alternate Flows} & \begin{itemize}
+%     \item[\textbf{3A}] The admin provides a username that is already in use by another user
+%     \item[\textbf{3A1}] The system displays an error that the username is already in use, and asks the admin to provide another username.
+%   \end{itemize} \\
+%   \hline
+%   \textbf{Pre-conditions} & \begin{itemize}
+%     \item The admin is signed into their account
+%   \end{itemize} \\
+%   \hline
+%   \textbf{Post-conditions} & None \\
+%   \hline
+%   \textbf{Special Requirements} & None \\
+%   \hline
+% \end{tabular}
 
-\subsubsection{View Submission Results}
 
-\subsubsection{View Submission History}
+% \subsubsection{Create Student Account}
 
-\subsubsection{Provide Submission Feedback}
+% \paragraph{Description} The instructor creates a student account for a specific course.
 
-\subsubsection{View Submission Feedback}
+% \paragraph{Functional Requirements and Use Cases}
 
-\subsubsection{View Course Grades}
+% \subparagraph{REQ-3} An instructor can create a student account for one of their courses.
 
-% (Instructor)
+% \vspace{0.1in}
+
+% \begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+%   \hline
+%   \textbf{Use Case Name} & Create Student Account \\
+%   \hline
+%   \textbf{Brief Description} & The instructor creates a student account for one of their courses \\
+%   \hline
+%   \textbf{Actor(s)} & Instructor \\
+%   \hline
+%   \textbf{Basic Flow} & \begin{itemize}
+%     \item[\textbf{1}] The instructor chooses one of the courses that they instruct
+%     \item[\textbf{2}] The system displays the home page for that course
+%     \item[\textbf{3}] The instructor chooses to create a new student
+%     \item[\textbf{4}] The system prompts the user to provide the student's name, username, and password
+%     \item[\textbf{5}] The instructor provides the student's details and submits
+%     \item[\textbf{6}] The system creates the student account, and notifies the instructor that the account was created
+%   \end{itemize}\\
+%   \hline
+%   \textbf{Alternate Flows} & \begin{itemize}
+%     \item[\textbf{5A}] The instructor provides a username that is already in use by another user
+%     \item[\textbf{5A1}] The system displays an error that the username is already in use, and asks the instructor to provide another username.
+%   \end{itemize} \\
+%   \hline
+%   \textbf{Pre-conditions} & \begin{itemize}
+%     \item The instructor is signed into their account
+%     \item The instructor has at least one course created
+%   \end{itemize} \\
+%   \hline
+%   \textbf{Post-conditions} & None \\
+%   \hline
+%   \textbf{Special Requirements} & None \\
+%   \hline
+% \end{tabular}
 
 
-\subsubsection{Download Student Information}
+% \subsubsection{Create Course}
+
+
+% \paragraph{Description} The instructor creates a course
+
+% \paragraph{Functional Requirements and Use Cases}
+
+% \subparagraph{REQ-4}  An instructor can create a course
+
+% \vspace{0.1in}
+
+% \begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+%   \hline
+%   \textbf{Use Case Name} & Create Course \\
+%   \hline
+%   \textbf{Brief Description} & An instructor creates a course \\
+%   \hline
+%   \textbf{Actor(s)} & Instructor \\
+%   \hline
+%   \textbf{Basic Flow} & \begin{itemize}
+%     \item[\textbf{1}] The instructor chooses to create a course
+%     \item[\textbf{2}] The system prompts the instructor to give the course a name and description
+%     \item[\textbf{3}] The instructor provides the course information and submits
+%     \item[\textbf{4}] The system creates the course, and displays the course homepage to the instructor
+%   \end{itemize}\\
+%   \hline
+%   \textbf{Alternate Flows} & None \\
+%   \hline
+%   \textbf{Pre-conditions} & \begin{itemize}
+%     \item The instructor is signed into their account
+%   \end{itemize} \\
+%   \hline
+%   \textbf{Post-conditions} & None \\
+%   \hline
+%   \textbf{Special Requirements} & None \\
+%   \hline
+% \end{tabular}
+
+
+% \subsubsection{Create Assignment}
+
+% \paragraph{Description} The instructor creates an assignment for one of their courses
+
+% \paragraph{Functional Requirements and Use Cases}
+
+% \subparagraph{REQ-5} An instructor can create an assignment within a course.
+
+% \vspace{0.1in}
+
+% \begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+%   \hline
+%   \textbf{Use Case Name} & Create Course Assignment \\
+%   \hline
+%   \textbf{Brief Description} & An instructor creates an assignment for a course  \\
+%   \hline
+%   \textbf{Actor(s)} & Instructor \\
+%   \hline
+%   \textbf{Basic Flow} & \begin{itemize}
+%     \item[\textbf{1}] The instructor chooses to create a new assignment
+%     \item[\textbf{2}] The system prompts the instructor to provide the assignment name, description, due date, language requirement, and test cases.
+%     \item[\textbf{3}] The instructor inputs the assignment details and submits
+%     \item[\textbf{4}] The system posts the assignment and returns the user to the course home page
+%   \end{itemize}\\
+%   \hline
+%   \textbf{Alternate Flows} & None \\
+%   \hline
+%   \textbf{Pre-conditions} & \begin{itemize}
+%     \item The instructor is signed into their account
+%     \item The instructor has at least one course
+%     \item The instructor is at the course home page
+%   \end{itemize} \\
+%   \hline
+%   \textbf{Post-conditions} & None \\
+%   \hline
+%   \textbf{Special Requirements} & None \\
+%   \hline
+% \end{tabular}
+
+
+% \subsubsection{Upload Assignment Test Case}
+
+% \paragraph{Description} The instructor uploads the input and expected output as text files for a test case.
+
+% \paragraph{Functional Requirements and Use Cases}
+
+% \subparagraph{REQ-17} An instructor can upload a test case with an input text file and an expected output text file.
+
+% \vspace{0.1in}
+
+% \begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+%   \hline
+%   \textbf{Use Case Name} & Upload Test Case \\
+%   \hline
+%   \textbf{Brief Description} & An instructor uploads an input and output file for a test case  \\
+%   \hline
+%   \textbf{Actor(s)} & Instructor \\
+%   \hline
+%   \textbf{Basic Flow} & \begin{itemize}
+%     \item[\textbf{1}] An instructor chooses to upload a test case
+%     \item[\textbf{2}] The system prompts the user with the options to upload two separate files, labeled "input" and "output"
+%     \item[\textbf{3}] The instructor uploads the input and output files for the test case
+%     \item[\textbf{4}] The system stores those files as a test case, and returns the instructor to the original view
+%   \end{itemize}\\
+%   \hline
+%   \textbf{Alternate Flows} & None \\
+%   \hline
+%   \textbf{Pre-conditions} & \begin{itemize}
+%     \item The instructor is signed into their account
+%     \item The instructor has at least one course
+%     \item The instructor is at the course home page
+%     \item The instructor is editing an assignment
+%   \end{itemize} \\
+%   \hline
+%   \textbf{Post-conditions} & None \\
+%   \hline
+%   \textbf{Special Requirements} & None \\
+%   \hline
+% \end{tabular}
+
+% \newpage
+
+% \subsubsection{View Assignments}
+
+% \paragraph{Description} The user can view a list of all assignments for the course
+
+% \paragraph{Functional Requirements and Use Cases}
+
+% % \begin{itemize}
+% %   \item \textbf{REQ-6} A student can view a list of their assignments.
+% %   \item \textbf{REQ-7} An instructor can view a list of assignments for a course.
+% % \end{itemize}
+
+% \subparagraph{REQ-6} A student can view a list of their assignments.
+
+% \vspace{0.1in}
+
+% \begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+%   \hline
+%   \textbf{Use Case Name} & View Course Assignments \\
+%   \hline
+%   \textbf{Brief Description} & An instructor uploads an input and output file for a test case  \\
+%   \hline
+%   \textbf{Actor(s)} & Instructor \\
+%   \hline
+%   \textbf{Basic Flow} & \begin{itemize}
+%     \item[\textbf{1}] An instructor chooses to upload a test case
+%     \item[\textbf{2}] The system prompts the user with the options to upload two separate files, labeled "input" and "output"
+%     \item[\textbf{3}] The instructor uploads the input and output files for the test case
+%     \item[\textbf{4}] The system stores those files as a test case, and returns the instructor to the original view
+%   \end{itemize}\\
+%   \hline
+%   \textbf{Alternate Flows} & None \\
+%   \hline
+%   \textbf{Pre-conditions} & \begin{itemize}
+%     \item The instructor is signed into their account
+%     \item The instructor has at least one course
+%     \item The instructor is at the course home page
+%     \item The instructor is editing an assignment
+%   \end{itemize} \\
+%   \hline
+%   \textbf{Post-conditions} & None \\
+%   \hline
+%   \textbf{Special Requirements} & None \\
+%   \hline
+% \end{tabular}
+
+
+
+
+% \subsubsection{Submit Assignments}
+
+% % includes feedback step
+
+% \subsubsection{View Submission Results}
+
+% \subsubsection{View Submission History}
+
+% \subsubsection{Provide Submission Feedback}
+
+% \subsubsection{View Submission Feedback}
+
+% \subsubsection{View Course Grades}
+
+% % (Instructor)
+
+
+% \subsubsection{Download Student Information}
 
 \subsection{Other Nonfunctional Requirements}
 
@@ -498,8 +635,6 @@
 
 % \subsubsection{Software Quality Attributes}
 
-
-\subsubsection{Other Requirements}
 
 \newpage
 \appendix
