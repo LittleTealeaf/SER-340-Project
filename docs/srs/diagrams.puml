@@ -26,6 +26,7 @@ rectangle CodeGrader {
   (Upload Test Case)
 
   (Create Assignment) ..> (Upload Test Case) : uses
+  (Download Student Information) ..> (View Course Grades) : extends
 }
 Administrator ---> (Login)
 Administrator ---> (Create Instructor Account)

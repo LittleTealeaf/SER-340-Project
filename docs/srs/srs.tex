@@ -140,6 +140,7 @@
   \item \textbf{REQ-14} A student can view feedback comments that the instructor has provided for an assignment submission.
   \item \textbf{REQ-15} An instructor can view a list of students and their grades for each assignment.
   \item \textbf{REQ-16} An instructor can download student information, including names and grades, for a course.
+  \item \textbf{REQ-17} An instructor can upload a test case with an input text file and an expected output text file.
 \end{itemize}
 
 \newpage
@@ -372,13 +373,95 @@
 
 \subsubsection{Upload Assignment Test Case}
 
+\paragraph{Description} The instructor uploads the input and expected output as text files for a test case.
+
+\paragraph{Functional Requirements and Use Cases}
+
+\begin{itemize}
+  \item \textbf{REQ-17} An instructor can upload a test case with an input text file and an expected output text file.
+\end{itemize}
+
+\vspace{0.1in}
+
+\begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+  \hline
+  \textbf{Use Case Name} & Upload Test Case \\
+  \hline
+  \textbf{Brief Description} & An instructor uploads an input and output file for a test case  \\
+  \hline
+  \textbf{Actor(s)} & Instructor \\
+  \hline
+  \textbf{Basic Flow} & \begin{itemize}
+    \item[\textbf{1}] An instructor chooses to upload a test case
+    \item[\textbf{2}] The system prompts the user with the options to upload two separate files, labeled "input" and "output"
+    \item[\textbf{3}] The instructor uploads the input and output files for the test case
+    \item[\textbf{4}] The system stores those files as a test case, and returns the instructor to the original view
+  \end{itemize}\\
+  \hline
+  \textbf{Alternate Flows} & None \\
+  \hline
+  \textbf{Pre-conditions} & \begin{itemize}
+    \item The instructor is signed into their account
+    \item The instructor has at least one course
+    \item The instructor is at the course home page
+    \item The instructor is editing an assignment
+  \end{itemize} \\
+  \hline
+  \textbf{Post-conditions} & None \\
+  \hline
+  \textbf{Special Requirements} & None \\
+  \hline
+\end{tabular}
+
+\newpage
+
+\subsubsection{View Assignments}
+
+\paragraph{Description} The user can view a list of all assignments for the course
+
+\paragraph{Functional Requirements and Use Cases}
+
+% \begin{itemize}
+%   \item \textbf{REQ-6} A student can view a list of their assignments.
+%   \item \textbf{REQ-7} An instructor can view a list of assignments for a course.
+% \end{itemize}
+
+\subparagraph{REQ-6} A student can view a list of their assignments.
+
+\vspace{0.1in}
+
+\begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+  \hline
+  \textbf{Use Case Name} & View Course Assignments \\
+  \hline
+  \textbf{Brief Description} & An instructor uploads an input and output file for a test case  \\
+  \hline
+  \textbf{Actor(s)} & Instructor \\
+  \hline
+  \textbf{Basic Flow} & \begin{itemize}
+    \item[\textbf{1}] An instructor chooses to upload a test case
+    \item[\textbf{2}] The system prompts the user with the options to upload two separate files, labeled "input" and "output"
+    \item[\textbf{3}] The instructor uploads the input and output files for the test case
+    \item[\textbf{4}] The system stores those files as a test case, and returns the instructor to the original view
+  \end{itemize}\\
+  \hline
+  \textbf{Alternate Flows} & None \\
+  \hline
+  \textbf{Pre-conditions} & \begin{itemize}
+    \item The instructor is signed into their account
+    \item The instructor has at least one course
+    \item The instructor is at the course home page
+    \item The instructor is editing an assignment
+  \end{itemize} \\
+  \hline
+  \textbf{Post-conditions} & None \\
+  \hline
+  \textbf{Special Requirements} & None \\
+  \hline
+\end{tabular}
 
 
-\subsubsection{View Assigned Assignments}
 
-\subsubsection{View Course Assignments}
-
-% (Instructor)
 
 \subsubsection{Submit Assignments}
 
@@ -425,7 +508,7 @@
 
 \section{Glossary}
 
-
+\paragraph{Test Case} A test case is an execution instance that tests submission code for expected results. Test cases consist of two parts: an input and output. The input is what is fed into the code, and the output is what the code should output. The actual output is compared with the expected output to pass or fail the test.
 
 
 \newpage
