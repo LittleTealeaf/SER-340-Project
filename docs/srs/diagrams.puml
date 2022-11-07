@@ -9,22 +9,33 @@ left to right direction
 
 rectangle CodeGrader {
 
-  (Login)
-  (Add Submission Feedback)
+  (Upload Test Case)
+  (Update Assignment)
+  (Create Assignment)
+  (View Course Grades)
   (Download Course Grades)
+  (Add Submission Feedback)
   (Create Instructor Account)
   (Create Course)
+  (Delete Instructor Account)
+  (Login)
+  (Edit Instructor Account)
   (Create Student Account)
-  (Upload Test Case)
-  (Create Assignment)
-  (Update Assignment)
+  (Edit Course)
+  (Edit Student Account)
+  (Delete Student Account)
+  (Delete Course)
   (Submit Assignment)
-  (View Course Grades)
+  (View Test Case)
+
+
 
 
   (Download Course Grades) ..> (View Course Grades) : extends
 
   (Add Submission Feedback) ..> (View Course Grades) : extends
+
+  (Delete Student Account) ..> (View Course Grades) : extends
 
   (Create Assignment) ..> (Upload Test Case) : uses
   (Update Assignment) ..> (Upload Test Case) : uses
@@ -35,6 +46,8 @@ rectangle CodeGrader {
 
 :Admin: --> (Login)
 :Admin: --> (Create Instructor Account)
+:Admin: --> (Delete Instructor Account)
+:Admin: --> (Edit Instructor Account)
 
 (Login) <-- :Instructor:
 (Create Course) <-- :Instructor:
@@ -45,9 +58,14 @@ rectangle CodeGrader {
 (View Course Grades) <-- :Instructor:
 (Download Course Grades) <-- :Instructor:
 (Add Submission Feedback) <-- :Instructor:
+(Edit Course) <-- :Instructor:
+(Delete Course) <-- :Instructor:
+(Delete Student Account) <-- :Instructor:
+(Edit Student Account) <-- :Instructor:
 
 :Student: --> (Login)
 :Student: --> (Submit Assignment)
+:Student: --> (View Test Case)
 
 
 

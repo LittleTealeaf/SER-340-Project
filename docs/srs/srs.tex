@@ -1,12 +1,12 @@
 \documentclass{article}
 \usepackage{graphicx}
-\usepackage[margin=0.75in]{geometry}
+\usepackage[margin=1in]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 
 % \setcounter{secnumdepth}{4}
 
-\graphicspath{{../../out/docs/srs/diagrams/}}
+\graphicspath{{interfaces/}{../../out/docs/srs/diagrams/}}
 
 \setlist{nosep}
 
@@ -63,7 +63,7 @@
   Date & Version & Description & Author\\
   \hline
   \hline
-  TBD & TBD & TBD & TBD \\
+  11/6/2022 & 1.0.0 & Initial Document & Thomas Kwashnak, Sadjell Mamon, Isaac Crawford \\
   \hline
 
 \end{tabular}
@@ -86,39 +86,50 @@
 This document is designed for project managers and developers to help them understand the clients' requirements. It contains a project's description, requirements, and use cases. The reader should start with the description and end with the requirements.
 
 \subsection{References}
-<List any other documents or Web addresses to which this SRS refers. These may include user interface style guides, contracts, standards, system requirements specifications, use case documents, or a vision and scope document. Provide enough information so that the reader could access a copy of each reference, including title, author, version number, date, and source or location.>
+Code Grader Vision Document v1.0.0
 \section{Overall Description}
 
 \subsection{Product Perspective}
-<Describe the context and origin of the product being specified in this SRS. For example, state whether this product is a follow-on member of a product family, a replacement for certain existing systems, or a new, self-contained product. If the SRS defines a component of a larger system, relate the requirements of the larger system to the functionality of this software and identify interfaces between the two. A simple diagram that shows the major components of the overall system, subsystem interconnections, and external interfaces can be helpful.>
+\paragraph{} Quinnipiac University desires to improve their grading system. This new product should help professors grade the submitted assignments quickly and efficiently. By creating a system for assignment submission and grading, this product should allow students to automatically receive a grade after submitting their assignments.
 
 \subsection{Product Functions}
-<Summarize the major functions the product must perform or must let the user perform. Details will be provided in Section 3, so only a high-level summary (such as a bullet list) is needed here. Organize the functions to make them understandable to any reader of the SRS. Add a high-level architecture diagram here. Describe the diagram and add caption.>
+\begin{itemize}
+  \item Allow all users to create an account and log in.
+  \item Allow all professors to create a class.
+  \item Allow all professors to invite students to a class.
+  \item Allow all students to join a class.
+  \item Allow all professors to post assignments
+  \item Allow all students to view/submit assignments.
+  \item Allow all users to see grades of their submitted/posted assignment.
+\end{itemize}
 
 \subsection{User Classes and Characteristics}
 
-\begin{tabular}{| p{0.3\linewidth} | p{0.65\linewidth} |}
+\begin{tabular}{| p{0.3\linewidth} | p{0.6\linewidth} |}
   \hline
   \textbf{Class} & \textbf{Description} \\
   \hline
   \hline
-  Physicians & \begin{itemize}
-    \item Highly experienced and educated in creating and performing medical processes
-    \item High-level security priviledges for working with patient data
-    \item Little to no experience with the Smart Checklist system
-  \end{itemize} \\
+  Admin & The admin will use the system to create and manage instructor accounts \\
+  \hline
+  Professors & The professors will use the system to create classes, add students to the classes, post assignments, change the grades, and leave comments.\\
+  \hline
+  Students & The students will use the system to view/submit assignments, and access grades and comments\\
   \hline
 \end{tabular}
 
 
 \subsection{Operating Environment}
-<Describe the environment in which the software will operate, including the hardware platform, operating system and versions, and any other software components or applications with which it must peacefully coexist.>
+The system will be hosted on a website that will be accessible by all common web browsers (Google Chrome, Safari, Firefox, etc.). The system will require an internet connection to be accessible. No additional software components or applications will be required to use the system
 
 \subsection{Design and Implementation Constraints}
-<Describe any items or issues that will limit the options available to the developers. These might include: corporate or regulatory policies; hardware limitations (timing requirements, memory requirements); interfaces to other applications; specific technologies, tools, and databases to be used; parallel operations; language requirements; communications protocols; security considerations; design conventions or programming standards (for example, if the customers organization will be responsible for maintaining the delivered software).>
+The database must be able to handle up to 5000 requests at a time.
+The web application must be usable on mobile devices.
+The client is responsible for maintaining the application after completion
+
 
 \subsection{Assumptions and Dependencies}
-<List any assumed factors (as opposed to known facts) that could affect the requirements stated in the SRS. These could include third-party or commercial components that you plan to use, issues around the development or operating environment, or constraints. The project could be affected if these assumptions are incorrect, are not shared, or change. Also identify any dependencies the project has on external factors, such as software components that you intend to reuse from another project, unless they are already documented elsewhere (for example, in the vision and scope document or the project plan).>
+Professors can have multiple classes. Student accounts are created on a per-class basis
 
 
 \newpage
@@ -126,21 +137,38 @@ This document is designed for project managers and developers to help them under
 
 \subsection{Interfaces}
 
-\subsection{Requirements}
+\subsubsection{Login Page}
+\includegraphics[width=0.8\linewidth]{WireframeLogin.png}
 
-\begin{itemize}
-  \item \textbf{REQ-1} The system should allow an admin to login using their username and password
-  \item \textbf{REQ-2} The system should allow an instructor to login using their username and password
-  \item \textbf{REQ-3} The system should allow a student to login using their username and password
-  \item \textbf{REQ-4} The system should allow an admin to create an instructor account with a username and password
-  \item \textbf{REQ-5} The system should allow an instructor to create a new course with a name and description
-  \item \textbf{REQ-6} The system should allow an instructor to create a student account for a course with a username and a password
-  \item \textbf{REQ-7} The system should allow an instructor to create an assignment
-  \item \textbf{REQ-8} The system should allow an instructor to upload a test case to an assignment, including the script input and expected output
-  \item \textbf{REQ-9} The system should allow an instructor to update an assignment
-  \item aowiejwoaef
+\subsubsection{Instructor Home}
+\includegraphics[width=0.8\linewidth]{InstructorHome.png}
 
-\end{itemize}
+\subsubsection{Admin Home}
+\includegraphics[width=0.8\linewidth]{AdminHome.png}
+
+\subsubsection{Student Home}
+\includegraphics[width=0.8\linewidth]{StudentHome.png}
+
+\subsubsection{Instructor Course View}
+\includegraphics[width=0.8\linewidth]{InstructorCourseView.png}
+
+\subsubsection{Student Grades View}
+\includegraphics[width=0.8\linewidth]{CourseStudentList.png}
+
+\subsubsection{Create Assignment}
+\includegraphics[width=0.8\linewidth]{CreateAssignment.png}
+
+\subsubsection{View Assignment}
+\includegraphics[width=0.8\linewidth]{ViewAssignment.png}
+
+\subsubsection{Instructor View Submission}
+\includegraphics[width=0.8\linewidth]{InstructorViewSubmission.png}
+
+\subsubsection{Create Account}
+\includegraphics[width=0.8\linewidth]{CreateAccount.png}
+
+\subsubsection{Create Course}
+\includegraphics[width=0.8\linewidth]{CreateCourse.png}
 
 \newpage
 
@@ -254,7 +282,7 @@ This document is designed for project managers and developers to help them under
   \hline
   \textbf{Basic Flow} & \begin{itemize}
     \item[] \textbf{1} The instructor chooses to create a new course
-    \item[] \textbf{2} The system prompts the instructor to fill in the new course name and description
+    \item[] \textbf{2} The system prompts the instructor to fill in the new course name
     \item[] \textbf{3} The instructor fills in the details and submits
     \item[] \textbf{4} The system creates the course, and displays the course's page
   \end{itemize}\\
@@ -289,7 +317,7 @@ This document is designed for project managers and developers to help them under
   \textbf{Pre-conditions} & The instructor is logged in, and is at the home page of one of their coruses\\
   \hline
   \textbf{Basic Flow} & \begin{itemize}
-    \item[] \textbf{1} The instructor chooses to view the student list
+    \item[] \textbf{1} The instructor chooses to view the student grades list
     \item[] \textbf{2} The system shows the user a list of all currently enrolled students, and the option to create a new account
     \item[] \textbf{3} The instructor chooses to create a new account
     \item[] \textbf{4} The system prompts the instructor to input the new account's name, username, and password
@@ -311,7 +339,7 @@ This document is designed for project managers and developers to help them under
 \paragraph{Functional Requirements and Use Cases}
 
 \begin{itemize}
-  \item \textbf{REQ-?} The system should allow an instructor to upload an input and expected output file as a test case.
+  \item \textbf{REQ-7} The system should allow an instructor to upload an input and expected output file as a test case.
 \end{itemize}
 
 \vspace{0.2in}
@@ -327,7 +355,7 @@ This document is designed for project managers and developers to help them under
   \hline
   \textbf{Basic Flow} & \begin{itemize}
     \item[] \textbf{1} The instructor chooses to upload a test case
-    \item[] \textbf{2} The system prompts the instructor to upload two documents, one labelled `Input' and the other labelled `Output', as well as the option to show detailed results to the students
+    \item[] \textbf{2} The system prompts the instructor to upload two documents, one labelled `Input' and the other labelled `Output'
     \item[] \textbf{3} The instructor uploads the input and output files and submits
     \item[] \textbf{4} The system creates the test case, attaches it to the assignment, and returns the instructor to the assignment editor
   \end{itemize}\\
@@ -348,8 +376,8 @@ This document is designed for project managers and developers to help them under
 \paragraph{Functional Requirements and Use Cases}
 
 \begin{itemize}
-  \item \textbf{REQ-?} The system allows an instructor to create an assignment with a name, description, and test cases
-  \item \textbf{REQ-?} The system allows an instructor to edit any assignment in one of their courses
+  \item \textbf{REQ-8} The system allows an instructor to create an assignment with a name, description, and test cases
+  \item \textbf{REQ-9} The system allows an instructor to edit any assignment in one of their courses
 \end{itemize}
 
 \vspace{0.2in}
@@ -414,7 +442,7 @@ This document is designed for project managers and developers to help them under
 \paragraph{Functional Requirements and Use Cases}
 
 \begin{itemize}
-  \item \textbf{REQ-??} The system should allow a student to upload and submit their code for an assignment
+  \item \textbf{REQ-10} The system should allow a student to upload and submit their code for an assignment
 \end{itemize}
 
 \vspace{0.2in}
@@ -451,7 +479,7 @@ This document is designed for project managers and developers to help them under
 \paragraph{Functional Requirements and Use Cases}
 
 \begin{itemize}
-  \item\textbf{REQ-??} The system should allow an instructor to view a list of grades in a course
+  \item\textbf{REQ-11} The system should allow an instructor to view a list of grades in a course
 \end{itemize}
 
 \vspace{0.2in}
@@ -484,7 +512,7 @@ This document is designed for project managers and developers to help them under
 \paragraph{Functional Requirements and Use Cases}
 
 \begin{itemize}
-  \item \textbf{REQ-??} The system should allow an instructor to download course grades as a file
+  \item \textbf{REQ-12} The system should allow an instructor to download course grades as a file
 \end{itemize}
 
 \vspace{0.2in}
@@ -517,7 +545,7 @@ This document is designed for project managers and developers to help them under
 \paragraph{Functional Requirements and Use Cases}
 
 \begin{itemize}
-  \item \textbf{REQ-??} The system should allow the instructor to add feedback to a student's assignment submissions
+  \item \textbf{REQ-13} The system should allow the instructor to add feedback to a student's assignment submissions
 \end{itemize}
 
 \begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
@@ -543,23 +571,269 @@ This document is designed for project managers and developers to help them under
   \hline
 \end{tabular}
 
+\subsubsection{Delete Instructor Account}
+
+\paragraph{Description} The admin deletes an instructor account
+
+\paragraph{Functional Requirement and Use Cases}
+
+\begin{itemize}
+  \item \textbf{REQ-14} The system should allow an admin to delete an instructor account
+\end{itemize}
+
+\begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+  \hline
+  \textbf{Use Case Name} & Delete Instructor Account \\
+  \hline
+  \textbf{Brief Description} & The admin deletes an instructor account \\
+  \hline
+  \textbf{Actor(s)} & Admin \\
+  \hline
+  \textbf{Pre-conditions} & The admin is logged in and sees a list of instructors\\
+  \hline
+  \textbf{Basic Flow} & \begin{itemize}
+    \item[] \textbf{1} The admin chooses to delete an instructor from the list
+    \item[] \textbf{2} The system asks the admin if they are sure they would like to delete that account, all courses under that account, and all students in those courses
+    \item[] \textbf{3} The admin chooses to confirm and delete the account
+    \item[] \textbf{4} The system deletes the account, all courses under the account, and all students under those courses. The system then displays the updated list of instructors to the admin.
+  \end{itemize}\\
+  \hline
+  \textbf{Alternate Flows} & \begin{itemize}
+    \item[] \textbf{3A} The admin chooses to cancel
+    \item[] \textbf{3A1} The system returns to the admin home page
+  \end{itemize}\\
+  \hline
+\end{tabular}
+
+\subsubsection{Delete Course}
+
+\paragraph{Description} An instructor deletes one of their courses
+
+\paragraph{Functional Requirements and Use Cases}
+
+\begin{itemize}
+  \item \textbf{REQ-15} The system should allow the instructor to delete one of their courses
+\end{itemize}
+
+\begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+  \hline
+  \textbf{Use Case Name} & Delete Course\\
+  \hline
+  \textbf{Brief Description} & An instructor deletes a course\\
+  \hline
+  \textbf{Actor(s)} & Instructor \\
+  \hline
+  \textbf{Pre-conditions} & The instructor is currently logged in\\
+  \hline
+  \textbf{Basic Flow} & \begin{itemize}
+    \item[] \textbf{1} The instructor chooses to delete a course from their list of courses
+    \item[] \textbf{2} The system asks the instructor if they really wish to delete that course
+    \item[] \textbf{3} The instructor confirms they wish to delete the course
+    \item[] \textbf{4} The system deletes the course, and all enrolled student accounts
+  \end{itemize}\\
+  \hline
+  \textbf{Alternate Flows} & \begin{itemize}
+    \item[] \textbf{3A} The instructor chooses to cancel
+    \item[] \textbf{3A1} The system displays an unchanged course list
+  \end{itemize}\\
+  \hline
+\end{tabular}
+
+\subsubsection{Delete Student Account}
+
+\paragraph{Description} An instructor deletes a student account from their course.
+
+\paragraph{Functional Requirements and Use Cases}
+\begin{itemize}
+  \item \textbf{REQ-16} The system should allow the instructor to delete a student account in one of their courses.
+\end{itemize}
+
+\begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+  \hline
+  \textbf{Use Case Name} & Delete Student Account\\
+  \hline
+  \textbf{Brief Description} & An instructor deletes a student account from one of their courses\\
+  \hline
+  \textbf{Actor(s)} & Instructor \\
+  \hline
+  \textbf{Pre-conditions} & The instructor is currently logged in, and has navigated to the student list in one of their courses\\
+  \hline
+  \textbf{Basic Flow} & \begin{itemize}
+    \item[] \textbf{1} The instructor chooses to delete one of the students
+    \item[] \textbf{2} The system asks the instructor if they really wish to delete that student account
+    \item[] \textbf{3} The instructor confirms they wish to delete that student account
+    \item[] \textbf{4} The system deletes the student account, and updates the student list
+  \end{itemize}\\
+  \hline
+  \textbf{Alternate Flows} & \begin{itemize}
+    \item[] \textbf{3A} The instructor chooses to cancel
+    \item[] \textbf{3A1} The system displays an unchanged student list
+  \end{itemize}\\
+  \hline
+\end{tabular}
+
+\subsubsection{Edit Instructor Account}
+
+\paragraph{Description} The admin edits the information for an instructor account
+
+\paragraph{Functional Requirement and Use Cases}
+
+\begin{itemize}
+  \item \textbf{REQ-17} The system should allow an admin to edit an instructor account's name, username, and password
+\end{itemize}
+
+\begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+  \hline
+  \textbf{Use Case Name} & Edit Instructor Account \\
+  \hline
+  \textbf{Brief Description} & The admin edits an instructor account \\
+  \hline
+  \textbf{Actor(s)} & Admin \\
+  \hline
+  \textbf{Pre-conditions} & The admin is logged in and sees a list of instructors\\
+  \hline
+  \textbf{Basic Flow} & \begin{itemize}
+    \item[] \textbf{1} The admin chooses to edit an instructor account from the list
+    \item[] \textbf{2} The system gives the admin the options to change the instructor account's name, username, and password
+    \item[] \textbf{3} The admin updates the instructor's information and submits
+    \item[] \textbf{4} The system updates the instructor's account and displays an updated list of instructors
+  \end{itemize}\\
+  \hline
+  \textbf{Alternate Flows} & \begin{itemize}
+    \item[] \textbf{3A} The admin changes the username to a username that is already in use
+    \item[] \textbf{3A1} The system prints an error stating that the username is in use, and asks the admin to choose a new username
+  \end{itemize}\\
+  \hline
+\end{tabular}
+
+\subsubsection{Edit Course}
+
+\paragraph{Description} An instructor edits the information of one of their courses
+
+\paragraph{Functional Requirements and Use Cases}
+
+\begin{itemize}
+  \item \textbf{REQ-18} The system should allow the instructor to edit the name of one of their courses
+\end{itemize}
+
+\begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+  \hline
+  \textbf{Use Case Name} & Edit Course\\
+  \hline
+  \textbf{Brief Description} & An instructor edits a course\\
+  \hline
+  \textbf{Actor(s)} & Instructor \\
+  \hline
+  \textbf{Pre-conditions} & The instructor is currently logged in\\
+  \hline
+  \textbf{Basic Flow} & \begin{itemize}
+    \item[] \textbf{1} The instructor chooses to edit a course in their list
+    \item[] \textbf{2} The system displays options to change the course name
+    \item[] \textbf{3} The instructor updates the course information and submits
+    \item[] \textbf{4} The system updates the course information and displays an updated course list
+  \end{itemize}\\
+  \hline
+  \textbf{Alternate Flows} & \begin{itemize}
+    \item[] \textbf{3A} The instructor changes the name to a name that is already in use by the instructor
+    \item[] \textbf{3A1} The system displays an error saying that the instructor needs to choose a different course name
+  \end{itemize}\\
+  \hline
+\end{tabular}
+
+\subsubsection{Edit Student Account}
+
+\paragraph{Description} An instructor edits a student account in their course.
+
+\paragraph{Functional Requirements and Use Cases}
+\begin{itemize}
+  \item \textbf{REQ-19} The system should allow the instructor to delete a student account in one of their courses.
+\end{itemize}
+
+\begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+  \hline
+  \textbf{Use Case Name} & Edit Student Account\\
+  \hline
+  \textbf{Brief Description} & An instructor edits a student account in one of their courses\\
+  \hline
+  \textbf{Actor(s)} & Instructor \\
+  \hline
+  \textbf{Pre-conditions} & The instructor is currently logged in, and has navigated to the student list in one of their courses\\
+  \hline
+  \textbf{Basic Flow} & \begin{itemize}
+    \item[] \textbf{1} The instructor chooses to edit one of their students
+    \item[] \textbf{2} The system displays options to change the students name, username, and password
+    \item[] \textbf{3} The instructor updates the information and submits
+    \item[] \textbf{4} The system updates the student account data and displays the updated student list
+  \end{itemize}\\
+  \hline
+  \textbf{Alternate Flows} & \begin{itemize}
+    \item[] \textbf{3A} The instructor changes the username to a different username that already exists
+    \item[] \textbf{3A1} The system displays an error and asks the instructor to choose a different username
+  \end{itemize}\\
+  \hline
+\end{tabular}
+
+\subsubsection{View Test Case Output}
+
+\paragraph{Description} A student views the output compared to the expected output for a test case in one of their submissions.
+
+\paragraph{Functional Requirements and Use Cases}
+
+\begin{itemize}
+  \item \textbf{REQ-20} The system should allow the student to view the actual output compared to the expected output for a test case.
+\end{itemize}
+
+\begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+  \hline
+  \textbf{Use Case Name} & View Test Case Results\\
+  \hline
+  \textbf{Brief Description} & A student views the test case results for a submission\\
+  \hline
+  \textbf{Actor(s)} & Student \\
+  \hline
+  \textbf{Pre-conditions} & The student is signed in, and has submitted an assignment at least once\\
+  \hline
+  \textbf{Basic Flow} & \begin{itemize}
+    \item[] \textbf{1} The student opens an assignment that they have already submitted
+    \item[] \textbf{2} The system displays the assignment information, as well as the student's submission. The system displays a list of test cases and whether the student has passed or failed each one
+    \item[] \textbf{3} The student chooses one of the test cases
+    \item[] \textbf{4} The system displays the details of the test case, including the comparison between the actual result, and expected result
+  \end{itemize}\\
+  \hline
+  \textbf{Alternate Flows} & None\\
+  \hline
+\end{tabular}
+
+\subsection{Nonfunctional Requirements}
+
+\subsubsection{Performance Requirements}
+\begin{itemize}
+  \item The system should display a login screen within 2 seconds
+  \item The system should grade a submission within 2 minutes
+\end{itemize}
+
+\subsubsection{Safety Requirements}
+\begin{itemize}
+  \item The system should not harm the user under any circumstances
+\end{itemize}
+
+\subsubsection{Software Quality Requirements}
+\begin{itemize}
+  \item The system must hold usernames and passwords in a secure database
+  \item Upon login, the system should send a text message or email to authenticate the user
+\end{itemize}
+
+\subsubsection{Security Requirements}
+
+\begin{itemize}
+  \item To comply with FERPA, the system should restrict student information to only be accessible by either the student or instructor.
+\end{itemize}
+
 \newpage
 \appendix
-
-
-
 
 \section{Glossary}
 
 \paragraph{Test Case} A test case is an execution instance that tests submission code for expected results. Test cases consist of two parts: an input and output. The input is what is fed into the code, and the output is what the code should output. The actual output is compared with the expected output to pass or fail the test.
-
-
-\newpage
-\section{Analysis Models}
-
-
-\newpage
-\section{To Be Determined List}
-
 
 \end{document}
