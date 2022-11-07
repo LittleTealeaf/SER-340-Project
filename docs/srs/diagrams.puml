@@ -10,18 +10,45 @@ left to right direction
 rectangle CodeGrader {
 
   (Login)
+  (Add Submission Feedback)
+  (Download Course Grades)
   (Create Instructor Account)
   (Create Course)
+  (Create Student Account)
+  (Upload Test Case)
+  (Create Assignment)
+  (Update Assignment)
+  (Submit Assignment)
+  (View Course Grades)
 
 
+  (Download Course Grades) ..> (View Course Grades) : extends
+
+  (Add Submission Feedback) ..> (View Course Grades) : extends
+
+  (Create Assignment) ..> (Upload Test Case) : uses
+  (Update Assignment) ..> (Upload Test Case) : uses
 
 }
 
-:Student: ---> (Login)
-:Admin: ---> (Login)
-:Instructor: ---> (Login)
+
+
+:Admin: --> (Login)
 :Admin: --> (Create Instructor Account)
-:Instructor: ---> (Create Course)
+
+(Login) <-- :Instructor:
+(Create Course) <-- :Instructor:
+(Create Student Account) <-- :Instructor:
+(Upload Test Case) <-- :Instructor:
+(Create Assignment) <-- :Instructor:
+(Update Assignment) <-- :Instructor:
+(View Course Grades) <-- :Instructor:
+(Download Course Grades) <-- :Instructor:
+(Add Submission Feedback) <-- :Instructor:
+
+:Student: --> (Login)
+:Student: --> (Submit Assignment)
+
 
 
 @enduml

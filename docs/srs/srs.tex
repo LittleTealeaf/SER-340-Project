@@ -77,11 +77,13 @@
 \section{Introduction}
 
 \subsection{Purpose}
-<Briefly identify the product whose software requirements are specified in this document, including the revision or release number. Describe the scope of the product that is covered by this SRS, particularly if this SRS describes only part of the system or a single subsystem.>
+\paragraph{} The purpose of this document is to outline the requirements for the development of the Code Grader System. This document will provide information about the functionality the Code Grader system will have. This project will be completed by Spring 2023
+
+\paragraph{} This project is designed to help professors grade assignments faster and more efficiently. Students will be able to join classes and submit their assignments; while teachers will be able to add students to their classes and see their submissions.
 
 \subsection{Intended Audience and Reading Suggestion}
 
-< Briefly describe the different types of reader that the document is intended for, such as developers, project managers, marketing staff, users, testers, and documentation writers. Describe what the rest of this SRS contains and how it is organized. Suggest a sequence for reading the document, beginning with the overview sections and proceeding through the sections that are most pertinent to each reader type.>
+This document is designed for project managers and developers to help them understand the clients' requirements. It contains a project's description, requirements, and use cases. The reader should start with the description and end with the requirements.
 
 \subsection{References}
 <List any other documents or Web addresses to which this SRS refers. These may include user interface style guides, contracts, standards, system requirements specifications, use case documents, or a vision and scope document. Provide enough information so that the reader could access a copy of each reference, including title, author, version number, date, and source or location.>
@@ -132,8 +134,21 @@
   \item \textbf{REQ-3} The system should allow a student to login using their username and password
   \item \textbf{REQ-4} The system should allow an admin to create an instructor account with a username and password
   \item \textbf{REQ-5} The system should allow an instructor to create a new course with a name and description
+  \item \textbf{REQ-6} The system should allow an instructor to create a student account for a course with a username and a password
+  \item \textbf{REQ-7} The system should allow an instructor to create an assignment
+  \item \textbf{REQ-8} The system should allow an instructor to upload a test case to an assignment, including the script input and expected output
+  \item \textbf{REQ-9} The system should allow an instructor to update an assignment
+  \item aowiejwoaef
 
 \end{itemize}
+
+\newpage
+
+\subsection{Use Case Diagram}
+
+\includegraphics[height=8in,width=\linewidth,keepaspectratio]{Use Case Diagram.png}
+
+\newpage
 
 \subsection{System Features}
 
@@ -253,17 +268,285 @@
 
 \subsubsection{Create Student Account}
 
-\subsubsection{View Assignments}
+\paragraph{Description} The instructor creates a student accoutn for a course
 
-\subsubsection{Submitting and Reviewing Assignments}
+\paragraph{Functional Requirements and Use Cases}
 
-\subsubsection{Instructor Viewing Submitted Assignments}
+\begin{itemize}
+  \item \textbf{REQ-6} The system should allow an instructor to create a student account for a course with a username and a password
+\end{itemize}
 
-\subsubsection{Submission Feedback}
+\vspace{0.2in}
 
+\begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+  \hline
+  \textbf{Use Case Name} & Create Student Account \\
+  \hline
+  \textbf{Brief Description} & The instructor creates a student account for a course \\
+  \hline
+  \textbf{Actor(s)} & Instructor \\
+  \hline
+  \textbf{Pre-conditions} & The instructor is logged in, and is at the home page of one of their coruses\\
+  \hline
+  \textbf{Basic Flow} & \begin{itemize}
+    \item[] \textbf{1} The instructor chooses to view the student list
+    \item[] \textbf{2} The system shows the user a list of all currently enrolled students, and the option to create a new account
+    \item[] \textbf{3} The instructor chooses to create a new account
+    \item[] \textbf{4} The system prompts the instructor to input the new account's name, username, and password
+    \item[] \textbf{5} The user inputs the relevant information and submits
+    \item[] \textbf{6} The system creates the user, and then shows an updated list of all students currently enrolled in that course.
+  \end{itemize}\\
+  \hline
+  \textbf{Alternate Flows} & \begin{itemize}
+    \item[] \textbf{5A} The instructor inputs a username that already has an account
+    \item[] \textbf{5A1} The system asks the instructor to input a different username because the username is currently in use.
+  \end{itemize} \\
+  \hline
+\end{tabular}
+
+\subsubsection{Upload Test Case}
+
+\paragraph{Description} An instructor uploads files required to create a test case for an assignment
+
+\paragraph{Functional Requirements and Use Cases}
+
+\begin{itemize}
+  \item \textbf{REQ-?} The system should allow an instructor to upload an input and expected output file as a test case.
+\end{itemize}
+
+\vspace{0.2in}
+\begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+  \hline
+  \textbf{Use Case Name} & Upload Test Case \\
+  \hline
+  \textbf{Brief Description} & The instructor uploads a test case as two files including the input and output \\
+  \hline
+  \textbf{Actor(s)} & Instructor \\
+  \hline
+  \textbf{Pre-conditions} & The instructor is logged in, and is currently editing or creating an assignment\\
+  \hline
+  \textbf{Basic Flow} & \begin{itemize}
+    \item[] \textbf{1} The instructor chooses to upload a test case
+    \item[] \textbf{2} The system prompts the instructor to upload two documents, one labelled `Input' and the other labelled `Output', as well as the option to show detailed results to the students
+    \item[] \textbf{3} The instructor uploads the input and output files and submits
+    \item[] \textbf{4} The system creates the test case, attaches it to the assignment, and returns the instructor to the assignment editor
+  \end{itemize}\\
+  \hline
+  \textbf{Alternate Flows} & \begin{itemize}
+    \item[] \textbf{3A} The instructor does not upload an input file
+    \item[] \textbf{3A1} The system prints an error and asks the instructor to upload an input file
+    \item[] \textbf{3B} The instructor does not upload an output file
+    \item[] \textbf{3B1} The system prints and error and asks the instructor to upload an output file
+  \end{itemize} \\
+  \hline
+\end{tabular}
+
+\subsubsection{Create and Update Assignments}
+
+\paragraph{Description} An instructor is able to create and update assignemnts within a course
+
+\paragraph{Functional Requirements and Use Cases}
+
+\begin{itemize}
+  \item \textbf{REQ-?} The system allows an instructor to create an assignment with a name, description, and test cases
+  \item \textbf{REQ-?} The system allows an instructor to edit any assignment in one of their courses
+\end{itemize}
+
+\vspace{0.2in}
+
+\begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+  \hline
+  \textbf{Use Case Name} & Create Assignment \\
+  \hline
+  \textbf{Brief Description} & The instructor creates an assignment in one of their couses \\
+  \hline
+  \textbf{Actor(s)} & Instructor \\
+  \hline
+  \textbf{Pre-conditions} & The instructor is logged in\\
+  \hline
+  \textbf{Basic Flow} & \begin{itemize}
+    \item[] \textbf{1} The instructor chooses a course
+    \item[] \textbf{2} The system displays a list of assignments in that course
+    \item[] \textbf{3} The instructor chooses to createan assignment
+    \item[] \textbf{4} The system prompts the instructor to input the assignment name, description, and upload any test cases
+    \item[] \textbf{5} The instructor inputs the proper data, and submits the assignment
+    \item[] \textbf{6} The system displays an updated assignment list with the new assignment
+  \end{itemize}\\
+  \hline
+  \textbf{Alternate Flows} & \begin{itemize}
+    \item[] \textbf{3A} The instructor does not upload an input file
+    \item[] \textbf{3A1} The system prints an error and asks the instructor to upload an input file
+    \item[] \textbf{3B} The instructor does not upload an output file
+    \item[] \textbf{3B1} The system prints and error and asks the instructor to upload an output file
+  \end{itemize} \\
+  \hline
+\end{tabular}
+
+\vspace{0.2in}
+
+\begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+  \hline
+  \textbf{Use Case Name} & Update Assignment \\
+  \hline
+  \textbf{Brief Description} & The instructor creates an assignment in one of their couses \\
+  \hline
+  \textbf{Actor(s)} & Instructor \\
+  \hline
+  \textbf{Pre-conditions} & The instructor is logged in\\
+  \hline
+  \textbf{Basic Flow} & \begin{itemize}
+    \item[] \textbf{1} The instructor chooses a course
+    \item[] \textbf{2} The system displays a list of assignments in that course
+    \item[] \textbf{3} The instructor chooses to edit one of the assignments in the course
+    \item[] \textbf{4} The system displays an editable screen for the assignment, allowing the instructor to edit the name, description, and upload new test cases
+    \item[] \textbf{5} The user updates the assignment and submits
+    \item[] \textbf{6} The system updates the assignment and displays an updated assignment list
+  \end{itemize}\\
+  \hline
+  \textbf{Alternate Flows} & None \\
+  \hline
+\end{tabular}
+
+\subsubsection{Submit Assignments}
+
+\paragraph{Description} A student completes and submits an assignemnt for grading
+
+\paragraph{Functional Requirements and Use Cases}
+
+\begin{itemize}
+  \item \textbf{REQ-??} The system should allow a student to upload and submit their code for an assignment
+\end{itemize}
+
+\vspace{0.2in}
+
+\begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+  \hline
+  \textbf{Use Case Name} & Submit Assignment \\
+  \hline
+  \textbf{Brief Description} & The student uploads their code and submits an assignment \\
+  \hline
+  \textbf{Actor(s)} & Student \\
+  \hline
+  \textbf{Pre-conditions} & The Student is Logged In\\
+  \hline
+  \textbf{Basic Flow} & \begin{itemize}
+    \item[] \textbf{1} The student chooses an assignment to complete
+    \item[] \textbf{2} The system displays details for that assignment, and gives the student the ability to upload code and submit
+    \item[] \textbf{3} The student uploads their code and submits
+    \item[] \textbf{4} The system uploads the code and submits the assignment
+    \item[] \textbf{5} The system grades the assignment, and displays the grading results to the user
+  \end{itemize}\\
+  \hline
+  \textbf{Alternate Flows} & \begin{itemize}
+    \item[] \textbf{3A} The student does not upload any file and submits
+    \item[] \textbf{3A1} The system prints an error requesting that the user uploads a code file to submit
+  \end{itemize}\\
+  \hline
+\end{tabular}
+
+\subsubsection{View Student Grades}
+
+\paragraph{Description} The instructor views the submission grades of students in a course
+
+\paragraph{Functional Requirements and Use Cases}
+
+\begin{itemize}
+  \item\textbf{REQ-??} The system should allow an instructor to view a list of grades in a course
+\end{itemize}
+
+\vspace{0.2in}
+
+\begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+  \hline
+  \textbf{Use Case Name} & View Course Grades \\
+  \hline
+  \textbf{Brief Description} & The instructor navigates and views a list of course grades \\
+  \hline
+  \textbf{Actor(s)} & Instructor \\
+  \hline
+  \textbf{Pre-conditions} & The Instructor is Logged In\\
+  \hline
+  \textbf{Basic Flow} & \begin{itemize}
+    \item[] \textbf{1} The instructor chooses a course
+    \item[] \textbf{2} The system displays the list of assignments for the course
+    \item[] \textbf{3} The instructor chooses to view course grades
+    \item[] \textbf{4} The system displays a table of students and their grades for each assignment
+  \end{itemize}\\
+  \hline
+  \textbf{Alternate Flows} & None\\
+  \hline
+\end{tabular}
+
+\subsubsection{Download Student Grades}
+
+\paragraph{Description} The instructor downloads student grades as a file
+
+\paragraph{Functional Requirements and Use Cases}
+
+\begin{itemize}
+  \item \textbf{REQ-??} The system should allow an instructor to download course grades as a file
+\end{itemize}
+
+\vspace{0.2in}
+
+\begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+  \hline
+  \textbf{Use Case Name} & Download Course Grades \\
+  \hline
+  \textbf{Brief Description} & The instructor downloads student grades for a particular course \\
+  \hline
+  \textbf{Actor(s)} & Instructor \\
+  \hline
+  \textbf{Pre-conditions} & The Instructor is Logged In and is viewing grades for one of their courses\\
+  \hline
+  \textbf{Basic Flow} & \begin{itemize}
+    \item[] \textbf{1} The instructor chooses to download the course grades
+    \item[] \textbf{2} The system asks the instructor what file format they want the grades in
+    \item[] \textbf{3} The instructor selects a file format
+    \item[] \textbf{4} The system compiles the grades into a file of the provided format, and sends it to the instructor
+  \end{itemize}\\
+  \hline
+  \textbf{Alternate Flows} & None\\
+  \hline
+\end{tabular}
+
+\subsubsection{Provide Submission Feedback}
+
+\paragraph{Description} The instructor provides feedback to the submission of a particular student for a particular assignment
+
+\paragraph{Functional Requirements and Use Cases}
+
+\begin{itemize}
+  \item \textbf{REQ-??} The system should allow the instructor to add feedback to a student's assignment submissions
+\end{itemize}
+
+\begin{tabular}{| p{0.25\linewidth} | p{0.65\linewidth} |}
+  \hline
+  \textbf{Use Case Name} & Add Submission Feedback \\
+  \hline
+  \textbf{Brief Description} & The instructor provides feedback to a submission \\
+  \hline
+  \textbf{Actor(s)} & Instructor \\
+  \hline
+  \textbf{Pre-conditions} & The Instructor is Logged In and is currently viewing the list of assignments for a course\\
+  \hline
+  \textbf{Basic Flow} & \begin{itemize}
+    \item[] \textbf{1} The instructor chooses one of the assignment grades for a student
+    \item[] \textbf{2} The system displays that submission details, including the submitted code and the test case results. The system also displays an option to add feedback as a comment
+    \item[] \textbf{3} The instructor chooses to add feedback
+    \item[] \textbf{4} The system prompts the user to input the feedback
+    \item[] \textbf{5} The instructor inputs the feedback and submits
+    \item[] \textbf{6} The system adds the feedback to the submission and displays the submission
+  \end{itemize}\\
+  \hline
+  \textbf{Alternate Flows} & None\\
+  \hline
+\end{tabular}
 
 \newpage
 \appendix
+
+
 
 
 \section{Glossary}
@@ -273,8 +556,7 @@
 
 \newpage
 \section{Analysis Models}
-\subsection{Use Case Diagram}
-\includegraphics[height=8in,width=\linewidth,keepaspectratio]{Use Case Diagram.png}
+
 
 \newpage
 \section{To Be Determined List}
