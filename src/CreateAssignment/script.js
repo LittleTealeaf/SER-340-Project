@@ -40,7 +40,6 @@ function uploadTestCase() {
 	list_entry.append(test_details, del_button_container)
 
 	output_list.append(list_entry);
-	resetUpload()
 }
 
 function resetUpload() {
@@ -69,5 +68,3 @@ function resetUpload() {
 
 	head.append(labelIn, inputIn, labelOut, inputOut)
 }
-
-resetUpload()

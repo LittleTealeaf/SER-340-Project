@@ -35,8 +35,7 @@
 						placeholder="Description"
 					></textarea>
 				</div>
-				<ul class="list-group" id="assignmentTestCases">
-				</ul>
+				<ul class="list-group" id="assignmentTestCases"></ul>
 				<div class="flex flex-row justify-content-between">
 					<button
 						type="button"
@@ -44,6 +43,7 @@
 						id="buttonUploadTestCase"
 						data-bs-toggle="modal"
 						data-bs-target="#upload-modal"
+						onclick="resetUpload()"
 					>
 						Upload Test Case
 					</button>
