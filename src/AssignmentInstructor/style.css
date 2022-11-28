@@ -1,0 +1,9 @@
+.assignment-section {
+	border: 1px solid lightgray;
+	padding: 5px;
+	margin: 5px;
+}
+
+#code-preview {
+	font-size: 15px;
+}
