@@ -55,6 +55,7 @@ function resetUpload() {
 	inputIn.id = "uploadTestInput"
 	inputIn.type = "file"
 	inputIn.classList.add("form-control")
+	
 
 	const labelOut = document.createElement("label");
 	labelOut.textContent = "Test Output"
