@@ -28,7 +28,7 @@ function uploadTestCase() {
 	del_button_container.classList.add("flex","justify-content-center","align-items-center")
 
 	const del_button = document.createElement("button");	
-	del_button.innerText = "remove";
+	del_button.innerText = "Remove";
 	del_button.classList.add("btn","btn-danger");
 	del_button.addEventListener("onclick", (_) => {
 		list_entry.remove()	
