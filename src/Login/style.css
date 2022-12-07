@@ -1,0 +1,32 @@
+*{
+    border: 1px solid red !important;
+}
+
+body {
+    margin-top: 200px;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+}
+
+.col-md-4{
+    margin-left: 33.33%;
+    margin-right: 33.33%;
+}
+
+.row{
+    margin-bottom: 8px;
+}
+
+.row-btn{
+    margin-bottom: 8px;
+    margin-left: 15%;
+    margin-right: 15%
+}
+
+.btn{
+    background-color: #CBA36E;
+    color: white;
+}
