@@ -12,3 +12,16 @@
 	content: "Output: ";
 	font-weight: 800;
 }
+
+textarea {
+	margin-top: 15px;
+}
+
+.btn-primary {
+	background-color: #caa471;
+	margin-top: 30px;
+}
+
+.btn-secondary {
+	background-color: #2f5785;
+}
