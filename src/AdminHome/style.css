@@ -34,3 +34,13 @@ h3{
 .right-ind{
     text-align: right;
 }
+
+tr .btn {
+	background-color: transparent;
+	color: black;
+}
+
+tr .btn:hover {
+	background-color: gray;
+	color: black;
+}

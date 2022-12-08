@@ -17,7 +17,7 @@ textarea {
 	margin-top: 15px;
 }
 
-.btn-primary {
+.btn:not(.btn-secondary) {
 	background-color: #caa471;
 	margin-top: 30px;
 }
