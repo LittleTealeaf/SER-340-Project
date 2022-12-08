@@ -35,5 +35,5 @@ if(new URLSearchParams(window.location.search).get("type") == "Admin") {
 	document.querySelector("form").action = "../AdminHome"
 	document.getElementById("button-back").addEventListener('click', () => window.location.href = "../AdminHome")
 } else {
-	document.getElementById("button-back").addEventListener('click', () => window.location.href = "../Course")
+	document.getElementById("button-back").addEventListener('click', () => window.location.href = "../StudentGrades")
 }
