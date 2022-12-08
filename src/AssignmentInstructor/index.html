@@ -16,6 +16,10 @@
 		<script src="script.js"></script>
 	</head>
 	<body>
+		<div class="navbar flex justify-content-between m-2">
+			<button class="btn btn-secondary">Back</button>
+			<button class="btn btn-secondary">Log Out</button>
+		</div>
 		<div class="container">
 			<h3>Submission for Assignment X</h3>
 			<div class="progress">
@@ -52,9 +56,15 @@ public static void main(String[] args) {
 						<li class="list-group-item list-group-item-success">Test D</li>
 					</ul>
 					<form>
-						<textarea class="form-control" placeholder="Add Comment Here..." id="comment"></textarea>
-						<div style="display: flex; justify-content: right;">
-							<button type="submit" class="btn btn-secondary">Post Comment</button>
+						<textarea
+							class="form-control"
+							placeholder="Add Comment Here..."
+							id="comment"
+						></textarea>
+						<div style="display: flex; justify-content: right">
+							<button type="submit" class="btn btn-primary">
+								Post Comment
+							</button>
 						</div>
 					</form>
 				</div>
