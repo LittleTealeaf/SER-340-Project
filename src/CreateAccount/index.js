@@ -32,8 +32,11 @@ function onValidateCreateAccount(event) {
 }
 
 if(new URLSearchParams(window.location.search).get("type") == "Admin") {
-	document.querySelector("form").action = "../AdminHome"
-	document.getElementById("button-back").addEventListener('click', () => window.location.href = "../AdminHome")
+	document.querySelector("form").action = "../AdminHome/index.html"
+	document.getElementById("button-back").addEventListener('click', () => window.location.href = "../AdminHome/index.html")
+} else if(new URLSearchParams(window.location.search).get("type") == "InstructorCourse") {
+	document.querySelector("form").action = "../InstructorCourse/index.html"
+	document.getElementById("button-back").addEventListener('click', () => window.location.href = "../InstructorCourse/index.html")
 } else {
-	document.getElementById("button-back").addEventListener('click', () => window.location.href = "../StudentGrades")
+	document.getElementById("button-back").addEventListener('click', () => window.location.href = "../StudentGrades/index.html")
 }
