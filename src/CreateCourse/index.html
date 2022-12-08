@@ -21,26 +21,31 @@
 	</head>
 	<body>
 		<div class="navbar flex justify-content-between m-2">
-			<button id="button-back" class="btn btn-secondary">
-				Back
-			</button>
+			<button id="button-back" class="btn btn-secondary">Back</button>
 			<button id="button-logout" class="btn btn-secondary">Log Out</button>
 		</div>
 		<div class="container">
 			<form
 				id="createCourseForm"
 				name="createCourse"
-				onsubmit="return onValidateCreateAccount(event)"
 				novalidate
+				action="../InstructorHome/"
 			>
 				<h4 class="text-center">Create New Course</h4>
 				<div id="form-name" class="form-group">
-					<input type="text" class="form-control" placeholder="Course Name" required />
+					<input
+						type="text"
+						class="form-control"
+						placeholder="Course Name"
+						required
+					/>
 					<div class="invalid-feedback">Please include the course's name</div>
 				</div>
-				<button type="submit" id="form-submit" class="btn btn-primary">
-					Create Course
-				</button>
+				<div class="submit-container">
+					<button type="submit" id="form-submit" class="btn btn-primary">
+						Create Course
+					</button>
+				</div>
 			</form>
 		</div>
 	</body>
