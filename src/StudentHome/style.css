@@ -1,0 +1,51 @@
+body {
+    background: white;
+    color: black;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  
+  #home-section  {
+ 
+    min-height: 100px;
+    width: 100%;
+    margin-top: 45px;
+    background-color: white;
+  }
+
+  .rectangle{
+ 
+    height: 60px;
+    width: 600px;
+    background-color: rgb(207, 130, 238);
+    color: black;
+	  text-align: center;
+    margin-left: auto;
+	  margin-right: auto;
+	  margin-top: 20px;
+    margin-bottom: 10px;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+  }
+
+  .button-rectangle{
+ 
+    height: 60px;
+    width: 600px;
+    background-color: rgb(238, 204, 130);
+    color: black;
+	  text-align: center;
+    margin-left: auto;
+	  margin-right: auto;
+	  margin-top: 20px;
+    margin-bottom: 10px;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+  }
+
+ 
+
+

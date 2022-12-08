@@ -1,0 +1,14 @@
+.test-details {
+	display: flex;
+	flex-direction: column;
+}
+
+.test-details :first-child::before {
+	content: "Input: ";
+	font-weight: 800;
+}
+
+.test-details :last-child::before {
+	content: "Output: ";
+	font-weight: 800;
+}
