@@ -72,5 +72,10 @@ function resetUpload() {
 	head.append(labelIn, inputIn, labelOut, inputOut);
 }
 
-document.getElementById("button-back").addEventListener("click", () => window.location.href = "../InstructorHome/index.html")
-document.getElementById("button-logout").addEventListener("click", () => window.location.href = "../Login/index.html");
+
+document.getElementById("button-back").addEventListener("click", () => window.location.href = "../InstructorCourse/")
+document.getElementById("button-logout").addEventListener("click", () => window.location.href = "../Login/");
+
+if(new URLSearchParams(window.location.search).get("edit") == "true") {
+	document.querySelector("#createAssignment h3.text-center").textContent = "Edit Assignment";
+}
