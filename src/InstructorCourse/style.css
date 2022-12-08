@@ -1,0 +1,88 @@
+body {
+    background: white;
+    color: black;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  
+  #home-section  {
+ 
+    min-height: 100px;
+    width: 100%;
+    margin-top: 45px;
+    background-color: white;
+  }
+
+  .rectangle{
+ 
+    height: 60px;
+    width: 600px;
+    background-color: #ADA;
+    color: black;
+	  text-align: center;
+    margin-left: auto;
+	  margin-right: auto;
+	  margin-top: 20px;
+    margin-bottom: 10px;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+  }
+
+  .button-rectangle{
+ 
+    height: 60px;
+    width: 600px;
+    background-color: #D99;
+    color: black;
+	  text-align: center;
+    margin-left: auto;
+	  margin-right: auto;
+	  margin-top: 20px;
+    margin-bottom: 10px;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+  }
+
+  .gold-rectangle{
+ 
+    height: 60px;
+    width: 600px;
+    background-color: #CBA76B;
+    color: black;
+	  text-align: center;
+    margin-left: auto;
+	  margin-right: auto;
+	  margin-top: 20px;
+    margin-bottom: 10px;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+  }
+
+  .pyrite-rectangle{
+ 
+    height: 60px;
+    width: 600px;
+    background-color: #D6C09B;
+    color: black;
+	  text-align: center;
+    margin-left: auto;
+	  margin-right: auto;
+	  margin-top: 20px;
+    margin-bottom: 10px;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+  }
+
+ 
+a {
+	text-decoration: none;
+}
+
+.btn-secondary {
+	background-color: #2f5785;
+}
