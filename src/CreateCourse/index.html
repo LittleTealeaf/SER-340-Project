@@ -16,15 +16,15 @@
 			crossorigin="anonymous"
 			defer
 		></script>
-		<script src="index.js"></script>
+		<script defer src="script.js"></script>
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
 		<div class="navbar flex justify-content-between m-2">
-			<button class="btn btn-secondary">
+			<button id="button-back" class="btn btn-secondary">
 				Back
 			</button>
-			<button class="btn btn-secondary">Log Out</button>
+			<button id="button-logout" class="btn btn-secondary">Log Out</button>
 		</div>
 		<div class="container">
 			<form
@@ -38,9 +38,6 @@
 					<input type="text" class="form-control" placeholder="Course Name" required />
 					<div class="invalid-feedback">Please include the course's name</div>
 				</div>
-				
-				
-
 				<button type="submit" id="form-submit" class="btn btn-primary">
 					Create Course
 				</button>

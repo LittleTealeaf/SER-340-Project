@@ -47,5 +47,10 @@ body {
   }
 
  
+a {
+	text-decoration: none;
+}
 
-
+.btn-secondary {
+	background-color: #2f5785;
+}
