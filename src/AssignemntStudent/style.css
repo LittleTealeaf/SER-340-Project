@@ -1,0 +1,12 @@
+.assignment-submission-grade .list-group {
+	margin-top: 15px;
+}
+
+
+#submit-code button {
+	margin-top: 10px;
+}
+.submission-feedback {
+	font-size: 15px;
+	padding: 10px;
+}
