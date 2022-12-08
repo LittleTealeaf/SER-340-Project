@@ -1,0 +1,25 @@
+h3{
+    text-align: center;
+}
+
+.btn-secondary{
+    background-color: #2C5887;
+    color: white;
+}
+
+.btn-yel{
+    background-color: #CBA36E;
+}
+
+.bottom-buttons{
+    margin-left: 10%;
+    
+}
+
+.table{
+    max-width: flex;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border: 1px solid lightgray;
+}

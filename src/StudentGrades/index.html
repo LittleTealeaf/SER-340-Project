@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css"
+/>
+<script
+    defer
+    src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.bundle.min.js"
+></script>
+<script defer src="script.js"></script>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="navbar flex justify-content-between m-2">
+        <button id="button-back" class="btn btn-sm btn-secondary">Back</button>
+        <button id="button-logout" class="btn btn-sm btn-secondary">Log Out</button>
+    </div>
+    <h3>Student Grades</h3>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Student Name</th>
+            <th scope="col">Assignment 1</th>
+            <th scope="col">Assignment 2</th>
+            <th scope="col">Assignment 3</th>
+            <th scope="col">Total Grade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Richard Taughts</td>
+            <td>30/100</td>
+            <td>80/100</td>
+            <td>90/100</td>
+            <td>200/300</td>
+          </tr>
+          <tr>
+            <td>Winifred Bowlingreen</td>
+            <td>90/100</td>
+            <td>85/100</td>
+            <td>95/100</td>
+            <td>270/300</td>
+          </tr>
+          <tr>
+            <td>Seamus Haverstraw</td>
+            <td>20/100</td>
+            <td>N/A</td>
+            <td>10/100</td>
+            <td>30/300</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="navbar  bottom-buttons flex justify-content-between m-2">
+        <button class="btn btn-yel btn-secondary">Add Student</button>
+        <button class="btn btn-yel btn-secondary">Download Grades</button>
+    </div>
+</body>
+</html>
