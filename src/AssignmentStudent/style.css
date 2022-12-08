@@ -10,3 +10,10 @@
 	font-size: 15px;
 	padding: 10px;
 }
+.btn-secondary {
+	background-color: #2f5785;
+}
+
+.btn-primary {
+	background-color: #caa471;
+}
