@@ -14,3 +14,4 @@ out/
 **/*.ist
 
 tags
+**/*.DS_STORE
