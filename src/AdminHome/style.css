@@ -44,3 +44,22 @@ tr .btn:hover {
 	background-color: gray;
 	color: black;
 }
+table {
+	max-width: 800px;
+}
+
+.table-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.edit-btn-container {
+	display: flex;
+
+}
+
+.edit-btn-container div {
+	flex-grow: 1;
+}

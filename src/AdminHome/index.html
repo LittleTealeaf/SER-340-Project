@@ -23,36 +23,66 @@
 			<button id="button-logout" class="btn btn-secondary">Log Out</button>
 		</div>
 		<h3>Admin Home</h3>
-		<table class="table">
-			<thead>
-				<tr>
-					<th scope="col"></th>
-					<th scope="col"><p class="right-ind">Instructors</p></th>
-					<th scope="col"></th>
-					<th scope="col"></th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Mark Hoffman</td>
-					<td></td>
-					<td><input type="submit" value="Edit" class="btn btn-xs" /></td>
-					<td><input type="submit" value="Delete" class="btn btn-xs" /></td>
-				</tr>
-				<tr>
-					<td>John Bau</td>
-					<td></td>
-					<td><input type="submit" value="Edit" class="btn btn-xs" /></td>
-					<td><input type="submit" value="Delete" class="btn btn-xs" /></td>
-				</tr>
-				<tr>
-					<td>Jonathan Blake</td>
-					<td></td>
-					<td><input type="submit" value="Edit" class="btn btn-xs" /></td>
-					<td><input type="submit" value="Delete" class="btn btn-xs" /></td>
-				</tr>
-			</tbody>
-		</table>
+		<div class="table-container">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col"><p class="right-ind">Instructors</p></th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Mark Hoffman</td>
+						<td>
+							<div class="edit-btn-container">
+
+								<div></div>
+							<input type="submit" value="Edit" class="btn btn-xs" />
+
+							<input
+								type="submit"
+								value="Delete"
+								class="btn btn-xs"
+							/>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>John Bau</td>
+						<td>
+							<div class="edit-btn-container">
+
+								<div></div>
+							<input type="submit" value="Edit" class="btn btn-xs" />
+
+							<input
+								type="submit"
+								value="Delete"
+								class="btn btn-xs"
+							/>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>Jonathan Blake</td>
+						<td>
+							<div class="edit-btn-container">
+
+								<div></div>
+							<input type="submit" value="Edit" class="btn btn-xs" />
+
+							<input
+								type="submit"
+								value="Delete"
+								class="btn btn-xs"
+							/>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 		<div class="btn-container">
 			<button id="button-add-instructor" class="btn btn-lg btn-instructor">
 				Add New Instructor

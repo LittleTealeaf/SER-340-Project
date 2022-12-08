@@ -39,6 +39,7 @@ const destination = ({
 
 document.querySelector("form").action = destination;
 document.getElementById("button-back").addEventListener('click', () => window.location.href = destination);
+document.getElementById("button-logout").addEventListener('click', () => window.location.href = "../Login/index.html")
 
 
 /*
