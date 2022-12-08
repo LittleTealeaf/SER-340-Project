@@ -1,0 +1,36 @@
+.navbar{
+    margin-left: 90%;
+}
+
+.btn-sm{
+    background-color: #2C5887;
+    color: white;
+}
+
+h3{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.table{
+    margin-top: 5%;
+    margin-bottom: 5%; 
+    margin-left: 22%;
+    margin-right: 22%;
+    max-width: flex;
+    width: 56%;
+    border: 1px solid lightgrey;
+}
+
+
+.btn-instructor{
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    color: white;
+    background-color: #CBA36E;
+}
+
+.right-ind{
+    text-align: right;
+}
