@@ -31,6 +31,17 @@ function onValidateCreateAccount(event) {
 	return true;
 }
 
+const destination = ({
+	"Admin": "../AdminHome/index.html",
+	"InstructorCourse": "../InstructorCourse/index.html",
+})[new URLSearchParams(window.location.search).get("type")] || "../StudentGrades/index.html";
+
+
+document.querySelector("form").action = destination;
+document.getElementById("button-back").addEventListener('click', () => window.location.href = destination);
+
+
+/*
 if(new URLSearchParams(window.location.search).get("type") == "Admin") {
 	document.querySelector("form").action = "../AdminHome/index.html"
 	document.getElementById("button-back").addEventListener('click', () => window.location.href = "../AdminHome/index.html")
@@ -40,3 +51,4 @@ if(new URLSearchParams(window.location.search).get("type") == "Admin") {
 } else {
 	document.getElementById("button-back").addEventListener('click', () => window.location.href = "../StudentGrades/index.html")
 }
+*/
