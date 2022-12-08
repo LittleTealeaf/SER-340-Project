@@ -74,3 +74,7 @@ function resetUpload() {
 
 document.getElementById("button-back").addEventListener("click", () => window.location.href = "../InstructorCourse/")
 document.getElementById("button-logout").addEventListener("click", () => window.location.href = "../Login/");
+
+if(new URLSearchParams(window.location.search).get("edit") == "true") {
+	document.querySelector("#createAssignment h3.text-center").textContent = "Edit Assignment";
+}
