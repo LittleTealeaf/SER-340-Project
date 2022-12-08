@@ -71,3 +71,5 @@ function resetUpload() {
 
 	head.append(labelIn, inputIn, labelOut, inputOut);
 }
+
+document.getElementById("button-back").addEventListener("click", () => window.location.href = "../InstructorHome/")
