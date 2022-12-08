@@ -2,4 +2,27 @@
 	padding-bottom: 10px;
 }
 
+.create-button-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-top: 70px;
+}
 
+form {
+	width: 60%;
+	margin: auto;
+}
+
+form h4 {
+	margin-bottom: 30px;
+}
+
+.form-group {
+	margin: 10px;
+}
+
+.btn-primary {
+	background-color: #caa471;
+}
